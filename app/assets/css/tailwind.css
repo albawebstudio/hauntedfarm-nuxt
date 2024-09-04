@@ -1,0 +1,56 @@
+@import './american-frights.css';
+@import './another-danger.css';
+@import './scary-things.css';
+@import './unthinkers.css';
+@import './wolves-vs-monster.css';
+html {
+    scroll-behavior: smooth;
+}
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.pricing-box {
+    margin: 0.75rem;
+    text-align: center;
+    padding: 1.5rem 1.5rem 2.5rem;
+    box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
+    border-radius: 1rem;
+    transition-duration: 300ms;
+}
+
+.package-name {
+    --text-opacity: 1;
+    font-weight: 700;
+    text-transform: uppercase;
+    font-size: 0.875rem;
+}
+
+.filter-white {
+    filter: invert(100%) sepia(0%) saturate(0%) hue-rotate(129deg) brightness(110%) contrast(101%);
+}
+
+.filter-black {
+    filter: invert(0%) sepia(100%) saturate(7500%) hue-rotate(342deg) brightness(105%) contrast(109%);
+}
+
+.facebook {
+    background-color: #1877F2;
+    --tw-shadow-color: rgb(11, 93, 199, 0.4);
+}
+.x {
+    background-color: #ffffff;
+    --tw-shadow-color: rgb(243, 244, 246, 0.4);
+}
+.instagram {
+    background-color: #e1306c;
+    --tw-shadow-color: rgb(189, 27, 82, 0.4);
+}
+.tiktok {
+    background-color: #00f2ea;
+    --tw-shadow-color: rgb(0, 186, 180, 0.4);
+}
+.youtube {
+    background-color: #ff0000;
+    --tw-shadow-color: rgb(220, 38, 38, 0.4);
+}
