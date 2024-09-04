@@ -11,7 +11,7 @@ const { media } = useMediaData();
       <p v-for="content in media.content" class="text-lg text-black-500 my-8" v-html="content" />
     </div>
     <div class="flex min-h-screen w-full flex-wrap content-center justify-center p-5">
-      <div class="grid grid-cols-3 gap-3">
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3">
         <div v-for="el in media.mediaEl" class="w-80 bg-white p-3">
           <NuxtLink :to="el.link.href" :title="el.title" external target="_blank">
             <NuxtImg :src="el.asset.src" :alt="el.asset.alt" class="h-52 w-full object-cover" />
