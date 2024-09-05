@@ -20,5 +20,7 @@ export interface Pass {
 export interface Admission {
     name:  string;
     price: number;
+    currency: string;
     label: string;
+    terms: string;
 }

@@ -10,7 +10,9 @@ export function useTicketData() {
     const admission = ref<Admission>({
         name: "General Admission",
         price: 22,
-        label: "Per Person"
+        label: "Per Person",
+        currency: "USD",
+        terms: "We accept cash and most major credit cards"
     });
     const pass = ref<Pass[]> ([
         {

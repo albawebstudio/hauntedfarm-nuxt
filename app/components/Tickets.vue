@@ -42,10 +42,10 @@ function formatCurrency(price: number): string {
               <p class="text-base font-semibold text-gray-300">{{ pass.admission.label }}</p>
               <p class="mt-6 flex items-baseline justify-center gap-x-2">
                 <span class="font-american-frights text-orange-600 text-5xl font-bold tracking-tight">{{ formatCurrency(pass.admission.price) }}</span>
-                <span class="text-sm font-semibold leading-6 tracking-wide text-gray-300">USD</span>
+                <span class="text-sm font-semibold leading-6 tracking-wide text-gray-300">{{ pass.admission.currency }}</span>
               </p>
               <NuxtLink :to="ticket.cta.href" class="mt-10 block w-full rounded-md bg-primary-600 px-3 py-2 text-center text-sm font-semibold text-white shadow-sm hover:bg-primary-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary-600"><font-awesome-icon icon="fas fa-ticket"/> {{ ticket.cta.label }}</NuxtLink>
-              <p class="mt-6 text-xs leading-5 text-gray-200">Invoices and receipts available for easy company reimbursement</p>
+              <p class="mt-6 text-xs leading-5 text-gray-200">{{ pass.admission.terms }}</p>
             </div>
           </div>
         </div>
