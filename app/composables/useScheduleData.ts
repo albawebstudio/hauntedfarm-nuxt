@@ -80,6 +80,32 @@ export function useScheduleData() {
         }
         return events;
     };
+    const tagLines: string[] = [
+        "Enter the realm of terror.",
+        "Dare to be scared.",
+        "Experience the ultimate fright.",
+        "Get ready to scream.",
+        "Face your fears head-on.",
+        "Explore the horrors within.",
+        "Enter if you dare.",
+        "A chilling adventure.",
+        "Discover your darkest fears.",
+        "Embrace the terror.",
+        "Enter the abyss of horror.",
+        "Get lost in the madness.",
+        "Be part of the nightmare.",
+        "Welcome to the terror zone.",
+        "Enter the world of fear.",
+        "Discover the unknown horrors.",
+        "Face your nightmares.",
+        "Enter the haunted abyss.",
+        "Get ready for a haunting.",
+        "A spine-tingling experience.",
+        "The terror awaits you.",
+        "Enter the realm of darkness.",
+        "Ready for a ghostly adventure?",
+        "Be scared out of your mind."
+    ];
 
     const events = buildEvents();
     const schedule = ref<Schedule> ({
@@ -87,10 +113,12 @@ export function useScheduleData() {
         content: 'The Big Show runs Friday & Saturday starting September 27th through Halloween October 31st from 7-11 pm',
         // events:  events.value,
         events: events,
+        tagLines: tagLines,
     });
 
     return {
         schedule,
         events,
+        tagLines,
     }
 }

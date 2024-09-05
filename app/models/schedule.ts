@@ -4,4 +4,5 @@ export interface Schedule {
     title:   string;
     content: string;
     events:   ScheduleEvent[];
+    tagLines: string[];
 }
