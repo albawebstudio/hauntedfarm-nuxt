@@ -12,12 +12,20 @@ Look at the [Nuxt 3 documentation](https://nuxt.com/docs/getting-started/introdu
 
 Make sure to install the dependencies (using your preferred package manager):
 
-```bash
-# npm
-npm install
+**NOTE:** The `netlify.toml` file is used to configure Netlify.
 
+As this project is using Netlify, you will want to use an existing or new Netlify account for 
+locally development and or deploying the application.
+
+**DO NOT** add sensitive information to the `netlify.toml` file or the .env.example file. 
+Use the Netlify UI (admin) to manage your secrets.
+
+```bash
 # pnpm
 pnpm install
+
+# npm
+npm install
 
 # yarn
 yarn install

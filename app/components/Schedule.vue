@@ -5,7 +5,7 @@ import { useScheduleData } from "~/composables/useScheduleData";
 import { FontAwesomeIcon } from "@fortawesome/vue-fontawesome";
 
 const { site } = useSiteData();
-const { schedule, tagLines } = useScheduleData();
+const { schedule } = useScheduleData();
 const eventDate = (startDate: Date): number => {
   return startDate.getDate();
 }
@@ -17,28 +17,13 @@ let USDollar = new Intl.NumberFormat('en-US', {
   currency: 'USD',
 });
 const counter = ref(0);
-const forceRender = ref(false);
 
 const isEvenRow = computed(() => {
   return counter.value % 2 === 0;
 });
 
-const shuffleArray = (array: string[]) => {
-  for (let i = array.length - 1; i >= 0; i--) {
-    const j = Math.floor(Math.random() * (i + 1));
-    [array[i], array[j]] = [array[j], array[i]];
-  }
-  return array;
-}
-const catchwords = shuffleArray(tagLines);
-
-const getCatchword = () => {
-  return catchwords.pop();
-}
-
 onMounted(() => {
   counter.value++;
-  forceRender.value = !forceRender.value;
 });
 </script>
 
@@ -61,9 +46,11 @@ onMounted(() => {
             <div class="text-gray-700 font-medium text-sm text-center lg:text-left px-2">
               <i class="far fa-clock"></i> 7:00 - 11:00 PM
             </div>
-            <div class="text-gray-700 font-medium text-sm text-center lg:text-left px-2">
-              {{ getCatchword() }}
-            </div>
+            <client-only>
+              <div class="text-gray-700 font-medium text-sm text-center lg:text-left px-2">
+                {{ scheduleEvent.tagLine }}
+              </div>
+            </client-only>
           </div>
           <div class="font-semibold text-gray-800 text-xl text-center lg:text-left px-2">
             The Big Show

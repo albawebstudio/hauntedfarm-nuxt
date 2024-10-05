@@ -27,6 +27,8 @@
   },
   "packageManager": "pnpm@9.4.0+sha1.9217c800d4ab947a7aee520242a7b70d64fc7638",
   "devDependencies": {
+    "@netlify/plugin-csp-nonce": "^1.2.10",
+    "@netlify/plugin-emails": "^1.1.1",
     "@types/google.maps": "^3.57.0",
     "autoprefixer": "^10.4.19",
     "postcss": "^8.4.39",

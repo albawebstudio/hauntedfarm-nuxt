@@ -14,4 +14,9 @@ This is the base repository for the Haunted Farm website. The site leverages sev
 
 ## Setup
 
-Each folder should have it's own README.md file with instruction for installing.
+Each folder should have its own README.md file with instruction for installing.
+
+**Note:** You will find a pnpm-lock.yaml file in the root of each folder. This is a pnpm specific lock file.
+This is because the developer who created this application chose that package manager.
+If you are using a different package manager, you will need to remove this file. 
+Be sure to commit the new lock.yaml file to the repository if you choose a different package manager.

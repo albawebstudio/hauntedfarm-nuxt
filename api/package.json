@@ -1,0 +1,7 @@
+{
+	"dependencies": {
+		"@haftahave/serverless-ses-template": "^6.1.0",
+		"aws-sdk": "^2.1691.0",
+		"serverless": "^4.4.0"
+	}
+}

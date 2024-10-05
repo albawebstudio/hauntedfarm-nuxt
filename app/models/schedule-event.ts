@@ -2,6 +2,7 @@ export interface ScheduleEvent {
     "@context":          string;
     "@type":             string;
     name:                string;
+    tagLine:             string;
     description:         string;
     location:            Location;
     offers:              Offers;
