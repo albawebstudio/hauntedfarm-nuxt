@@ -34,6 +34,15 @@ yarn install
 bun install
 ```
 
+### Setup Environment Variables
+
+If you are using Netlify, you can use the Netlify UI to manage your secrets. 
+The other option is to copy the .env.example file to a .env file and add your secrets.
+
+1. Add the start date and time for the application as the value of `START_DATE`.
+2. Add the end date and time for the application as the value of `END_DATE`.
+3. Add the Google Maps Api key to enable the Google Maps API as the value of `GOOGLE_MAPS_API_KEY`.
+
 ## Development Server
 
 You have a few options for starting the development server. The suggestion is to use `netlify dev`,
