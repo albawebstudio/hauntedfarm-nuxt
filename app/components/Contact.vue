@@ -1,4 +1,5 @@
 <script setup lang="ts">
+import { ref } from 'vue';
 import { useGoogleMapData } from "~/composables/useGoogleMapData"
 import { useSiteData } from "~/composables/useSiteData"
 import { useContactData } from "~/composables/useContactData";
