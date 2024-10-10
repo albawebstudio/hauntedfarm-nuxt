@@ -4,12 +4,7 @@ import {useColorMode} from "@vueuse/core";
 import {onMounted, ref} from "vue";
 const { site } = useSiteData()
 
-const colorMode = useColorMode()
-const logoSrc = ref('/images/logo-navigation-light.svg')
-
-onMounted(() => {
-  logoSrc.value = colorMode.value === 'dark' ? '/images/logo-navigation-dark.svg' : '/images/logo-navigation-light.svg'
-})
+const logoSrc = ref('/images/logo-navigation.svg')
 
 const date = new Date();
 const currentYear = date.getFullYear();

@@ -1,16 +1,11 @@
 <script setup lang="ts">
 import {ref, onMounted} from 'vue'
-import {useColorMode} from "@vueuse/core";
 import { useSiteData } from "~/composables/useSiteData";
 
 const {site} = useSiteData()
 
-const colorMode = useColorMode()
-const logoSrc = ref('/images/logo-navigation-light.svg')
+const logoSrc = ref('/images/logo-navigation.svg')
 
-onMounted(() => {
-  logoSrc.value = colorMode.value === 'dark' ? '/images//logo-navigation-dark.svg' : '/images//logo-navigation-light.svg'
-})
 const showMenu = ref(false);
 const toggleNav = () => (showMenu.value = !showMenu.value);
 </script>

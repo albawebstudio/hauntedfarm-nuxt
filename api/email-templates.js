@@ -2,7 +2,7 @@ const path = require("path");
 
 const templateList = [
     {
-        templateId: "",
+        templateId: "hauntedfarm-contact",
         templateSubject: "Haunted Farm - Contact Form",
     }
 ];
@@ -33,13 +33,11 @@ module.exports = async (serverless, _options) => {
             __dirname,
             `../emails/dist/${templateId}.html`
         );
-        const templatePathTxt = path.join(__dirname, `../emails/dist/${templateId}.txt`);
 
         return {
             name: templateId,
             subject: templateSubject,
             html: serverless.utils.readFileSync(templatePathHtml),
-            text: serverless.utils.readFileSync(templatePathTxt),
         };
     });
     return sesEmailTemplates;

@@ -12,6 +12,11 @@ Look at the [Serverless](https://www.serverless.com/framework/docs) to learn mor
 
 ## Setup
 
+Prior to installing you will need to have AWS CLI keys for deploying the API and SES Email templates. 
+This requires an AWS account. If you do not have an AWS account, you are encouraged to create
+one [here](https://aws.amazon.com/free/). 
+You may also reach out to Alba Web Studio to request an AWS account and CLI credentials.
+
 Make sure to install the dependencies (using your preferred package manager):
 
 ```bash

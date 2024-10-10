@@ -47,6 +47,7 @@ export default defineNuxtConfig({
     public: {
       startDate: process.env.START_DATE,
       endDate: process.env.END_DATE,
+      apiUrl: process.env.API_URL,
       googleMapsApiKey: process.env.GOOGLE_MAPS_API_KEY,
     }
   },
