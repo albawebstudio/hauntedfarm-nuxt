@@ -1,7 +1,7 @@
 {
   "name": "email",
   "version": "1.0.0",
-  "description": "",
+  "description": "Email templates for the Haunted Farm project",
   "main": "index.js",
   "scripts": {
     "email:build:contact": "mjml ./src/*.mjml -o ./dist",
