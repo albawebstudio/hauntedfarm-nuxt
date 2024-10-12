@@ -6,6 +6,7 @@ import { useContactData } from "~/composables/useContactData";
 import Spinner from "~/components/common/Spinner.vue";
 import Success from "~/components/common/Success.vue";
 import ContactForm from "~/components/common/ContactForm.vue";
+import LogoSvg from "/public/images/logo.svg";
 
 const config = useRuntimeConfig()
 const apiKey = config.public.googleMapsApiKey
@@ -139,7 +140,7 @@ const clearSuccess = () => {
             <CustomMarker :options="markerOptions">
               <div style="text-align: center">
                 <div style="font-size: 1.125rem">The Haunted Farm</div>
-                <NuxtImg src="/images/logo.svg" width="74" height="108" />
+                <LogoSvg :fontControlled="false" width="74" height="108" />
               </div>
               <InfoWindow>
                 <div id="content">
