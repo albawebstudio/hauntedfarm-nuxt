@@ -23,6 +23,7 @@
     "@vueuse/core": "^11.1.0",
     "netlify-plugin-csp-generator": "^1.6.1",
     "nuxt": "^3.12.3",
+    "nuxt-svgo": "^4.0.6",
     "vue": "latest",
     "vue3-google-map": "^0.21.0"
   },

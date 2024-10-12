@@ -66,43 +66,48 @@ export function useSiteData() {
     ])
     const social_links = ref<SocialLink[]> ([
         {
+            component: "FacebookSvg",
             label: "facebook",
             color: "filter-white",
             bg_color: "facebook",
+            icon: "fa-brands fa-facebook",
             display_title: "Facebook",
-            icon: "/icons/icon-facebook.svg",
             href: "https://www.facebook.com/hauntedfarmmn/"
         },
         {
+            component: "XSvg",
             label: "x",
             color: "filter-black",
             bg_color: "x",
+            icon: "fa-brands fa-x-twitter",
             display_title: "X",
-            icon: "/icons/icon-x.svg",
             href: "https://x.com/hauntedfarmmn/"
         },
         {
+            component: "InstagramSvg",
             label: "instagram",
             color: "filter-white",
             bg_color: "instagram",
+            icon: "fa-brands fa-instagram",
             display_title: "Instagram",
-            icon: "/icons/icon-instagram.svg",
             href: "https://instagram.com/hauntedfarmmn/"
         },
         {
+            component: "TiktokSvg",
             label: "tiktok",
             color: "filter-white",
             bg_color: "tiktok",
+            icon: "fa-brands fa-tiktok",
             display_title: "Tiktok",
-            icon: "/icons/icon-tiktok.svg",
             href: "https://www.tiktok.com/@haunted_farm?lang=en"
         },
         {
+            component: "YoutubeSvg",
             label: "youtube",
             color: "filter-white",
             bg_color: "youtube",
+            icon: "fa-brands fa-youtube",
             display_title: "Youtube",
-            icon: "/icons/icon-youtube.svg",
             href: "https://www.youtube.com/channel/UCBUygE-KWIc4hZpDN9VTK9g"
         }
     ])
