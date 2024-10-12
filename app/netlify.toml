@@ -12,12 +12,8 @@
   status = 200
 
 [[plugins]]
-  package = "@netlify/plugin-emails"
-[[plugins]]
-  package = "@netlify/plugin-csp-nonce"
-
-[[headers]]
-  for = "/*"
-  [headers.values]
-    Content-Security-Policy = "default-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; img-src 'self' data: https://*.googleapis.com https://*.gstatic.com; script-src 'nonce-${nonce}' 'strict-dynamic' 'unsafe-inline' 'unsafe-eval' 'self' https: http:; script-src-elem 'self' 'unsafe-inline' https://*.googleapis.com https://*.gstatic.com; font-src 'self' data: https://fonts.gstatic.com; connect-src 'self' data: ws://localhost:*/ws https://*.googleapis.com https://*.execute-api.us-east-1.amazonaws.com/;"
-
+package = "netlify-plugin-csp-generator"
+  [plugins.inputs]
+  buildDir = "dist"
+  [plugins.inputs.policies]
+  defaultSrc = "'self'"
