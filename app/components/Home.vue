@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { useSiteData } from "~/composables/useSiteData"
-import {FontAwesomeIcon} from "@fortawesome/vue-fontawesome";
+import { FontAwesomeIcon } from "@fortawesome/vue-fontawesome"
 const { site } = useSiteData()
 
 const date = new Date()
@@ -29,7 +29,10 @@ const yrsHaunting = date.getFullYear() - site.value.established
       <div class="flex mx-auto my-24 w-2/3">
         <NuxtLink v-for="social_link in site.social_links" :key="social_link.label" :to="social_link.href" external class="mx-auto flex" target="_blank">
           <div :class="social_link.bg_color" class="mx-auto flex h-16 w-16 -translate-y-12 transform items-center justify-center rounded-full shadow-lg">
-            <NuxtImg :src="social_link.icon" :title="social_link.display_title" :class="social_link.color" width="30" height="30" />
+              <FontAwesomeIcon :icon="social_link.icon"
+                               :title="social_link.display_title"
+                               :class="social_link.color"
+                               class="text-2xl"/>
           </div>
         </NuxtLink>
       </div>

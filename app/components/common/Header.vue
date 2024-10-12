@@ -1,10 +1,9 @@
 <script setup lang="ts">
 import {ref, onMounted} from 'vue'
 import { useSiteData } from "~/composables/useSiteData";
+import LogoSrc from "/public/images/logo-navigation.svg";
 
-const {site} = useSiteData()
-
-const logoSrc = ref('/images/logo-navigation.svg')
+const { site } = useSiteData()
 
 const showMenu = ref(false);
 const toggleNav = () => (showMenu.value = !showMenu.value);
@@ -15,7 +14,7 @@ const toggleNav = () => (showMenu.value = !showMenu.value);
     <nav>
       <div class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
         <NuxtLink to="/#home" external class="flex items-center space-x-3 rtl:space-x-reverse">
-          <NuxtImg :src="logoSrc" :alt="site.title" class="h-16"/>
+          <LogoSrc :alt="site.title" :fontControlled="false" class="h-16"/>
           <span class="self-center text-4xl font-semibold whitespace-nowrap text-primary dark:text-orange-700 font-another-danger">{{ site.title }}</span>
         </NuxtLink>
         <button @click="toggleNav" data-collapse-toggle="navbar-default" type="button"
@@ -43,7 +42,5 @@ const toggleNav = () => (showMenu.value = !showMenu.value);
 </template>
 
 <style scoped>
-.dark-mode .logo-img {
-  content: url('/logo-full-dark.svg');
-}
+
 </style>

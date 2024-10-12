@@ -31,6 +31,7 @@ export default defineNuxtConfig({
     "@nuxt/image",
     "@nuxt/content",
     "@nuxtjs/color-mode",
+    "nuxt-svgo",
   ],
 
   plugins: [
