@@ -32,6 +32,7 @@ export default defineNuxtConfig({
     "@nuxt/content",
     "@nuxtjs/color-mode",
     "nuxt-svgo",
+    'nuxt-security',
   ],
 
   plugins: [
