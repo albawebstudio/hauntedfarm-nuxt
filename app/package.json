@@ -21,14 +21,13 @@
     "@nuxt/image": "^1.7.0",
     "@nuxtjs/google-fonts": "^3.2.0",
     "@vueuse/core": "^11.1.0",
+    "netlify-plugin-csp-generator": "^1.6.1",
     "nuxt": "^3.12.3",
     "vue": "latest",
     "vue3-google-map": "^0.21.0"
   },
   "packageManager": "pnpm@9.4.0+sha1.9217c800d4ab947a7aee520242a7b70d64fc7638",
   "devDependencies": {
-    "@netlify/plugin-csp-nonce": "^1.2.10",
-    "@netlify/plugin-emails": "^1.1.1",
     "@nuxtjs/color-mode": "^3.5.1",
     "@types/google.maps": "^3.57.0",
     "autoprefixer": "^10.4.19",
