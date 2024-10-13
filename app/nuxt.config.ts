@@ -61,4 +61,12 @@ export default defineNuxtConfig({
     preload: true
   },
 
+  security: {
+    headers: {
+      contentSecurityPolicy: {
+        'img-src': ["'self'", "data:", "https://maps.gstatic.com/", "https://maps.googleapis.com/"],
+      }
+    },
+  }
+
 })
