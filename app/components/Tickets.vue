@@ -21,7 +21,7 @@ function formatCurrency(price: number): string {
       </div>
       <div v-for="pass in ticket.passes" class="mx-auto mt-16 max-w-2xl rounded-3xl ring-1 ring-gray-200 sm:mt-20 lg:mx-0 lg:flex lg:max-w-none">
         <div class="p-8 sm:p-10 lg:flex-auto">
-          <h3 class="font-another-danger text-2xl font-bold tracking-tight text-secondary">{{pass.admission.name }}</h3>
+          <h3 class="font-american-frights text-2xl font-bold tracking-tight text-secondary">{{pass.admission.name }}</h3>
           <p v-for="content in pass.content" class="mt-6 text-base leading-7 text-secondary-500" v-html="content"></p>
           <div class="mt-10 flex items-center gap-x-4">
             <h4 class="flex-none text-sm font-semibold leading-6 text-orange-600">What’s included</h4>

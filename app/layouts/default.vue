@@ -45,7 +45,7 @@ useHead({
 </script>
 
 <template>
-  <CommonHeader />
+  <CommonNavigation />
   <slot></slot>
   <CommonFooter />
 </template>

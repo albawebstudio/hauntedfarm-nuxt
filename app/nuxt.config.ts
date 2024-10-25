@@ -56,8 +56,18 @@ export default defineNuxtConfig({
 
   googleFonts: {
     families: {
-      "Creepster": true
+      "Creepster": true,
+      Oswald: {
+        wght: [300, 500, 700, 800]
+      },
+      'Libre Baskerville': true,
+      Lato: [100, 300],
+      Raleway: {
+        wght: [100, 300, 500, 700, 900],
+        ital: [100, 300, 500, 700, 900],
+      },
     },
+    display: 'swap',
     preload: true
   },
 
@@ -67,6 +77,6 @@ export default defineNuxtConfig({
         'img-src': ["'self'", "data:", "https://maps.gstatic.com/", "https://maps.googleapis.com/"],
       }
     },
-  }
+  },
 
 })
