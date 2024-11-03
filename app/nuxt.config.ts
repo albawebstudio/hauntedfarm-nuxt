@@ -33,6 +33,7 @@ export default defineNuxtConfig({
     "@nuxtjs/color-mode",
     "nuxt-svgo",
     'nuxt-security',
+    'nuxt-gtag',
   ],
 
   plugins: [
@@ -68,6 +69,10 @@ export default defineNuxtConfig({
     },
     display: 'swap',
     preload: true
+  },
+
+  gtag: {
+    id: 'G-61QKTVDLHP'
   },
 
   security: {
