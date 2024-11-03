@@ -8,7 +8,7 @@ const { media } = useMediaData();
   <section id="media" class="py-12 bg-gray-400" style="background-image: linear-gradient(rgba(0, 0, 0, 0.7),rgba(0, 0, 0, 0.4)),url('/images/media.jpg')">
     <div class="mx-auto my-12 w-2/3 text-center">
       <h2 class="font-wolves-vs-monster text-orange-600 text-4xl leading-relaxed">{{ media.title }}</h2>
-      <p v-for="content in media.content" class="text-lg text-black-500 my-8" v-html="content" />
+      <p v-for="content in media.content" class="text-lg text-slate-100 my-8" v-html="content" />
     </div>
     <div class="flex min-h-screen w-full flex-wrap content-center justify-center p-5">
       <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3">
