@@ -10,7 +10,7 @@ const yrsHaunting = date.getFullYear() - site.value.established
 <template>
   <section id="home" class="bg-center bg-no-repeat bg-black" style="background-image: linear-gradient(rgba(0, 0, 0, 0.7),rgba(0, 0, 0, 0.4)),url('/images/main2.jpg')">
     <div class="px-4 mx-auto max-w-screen-xl text-center py-24">
-      <h1 class="mb-4 text-4xl font-extrabold tracking-tight leading-none text-white font-american-frights md:text-5xl lg:text-6xl uppercase">Haunting for <span class="text-primary-600 font-unthinkers px-2">{{ yrsHaunting }}</span> Years</h1>
+      <h1 class="mb-4 text-4xl font-extrabold tracking-tight leading-none text-white font-american-frights md:text-5xl lg:text-6xl uppercase">Haunting for <span class="text-primary-600 md:text-7xl lg:text-8xl px-2">{{ yrsHaunting }}</span> Years</h1>
       <p class="mb-8 text-lg font-normal text-gray-300 lg:text-xl sm:px-16 lg:px-48">
         Welcome to <span class="text-white font-another-danger px-2">The Haunted Farm</span> and <span class="text-white font-another-danger px-2">The Walking Dead</span>!<br/>
         Come join us in 2024 for our most <span class="text-primary-600 font-wolves-vs-monster">chilling</span> season at The Haunted Farm

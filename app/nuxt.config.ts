@@ -56,7 +56,6 @@ export default defineNuxtConfig({
 
   googleFonts: {
     families: {
-      "Creepster": true,
       Oswald: {
         wght: [300, 500, 700, 800]
       },

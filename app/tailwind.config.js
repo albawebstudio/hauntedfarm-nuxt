@@ -142,9 +142,6 @@ export default {
                 'Segoe UI Symbol',
                 'Noto Color Emoji'
             ],
-            'creepster': [
-                'Creepster',
-            ],
             'wolves-vs-monster': [
                 'Wolves Vs Monster'
             ],
@@ -153,12 +150,6 @@ export default {
             ],
             'another-danger': [
                 'Another Danger'
-            ],
-            'scary-things': [
-                'Scary Things'
-            ],
-            'unthinkers': [
-                'Unthinkers',
             ],
             'oswald': [
                 'Oswald',

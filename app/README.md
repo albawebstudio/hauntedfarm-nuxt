@@ -117,8 +117,12 @@ This list should be edited prior to production deployment.
 
 [The Branded Quotes](https://thebrandedquotes.sellfy.store/)
 
-- [Wolves vs Monster](https://thebrandedquotes.sellfy.store/p/wolves-vs-monster-retro-horror/)
-- [American Frights](https://thebrandedquotes.sellfy.store/p/hkjuj6/)
-- [Unthinkers](https://thebrandedquotes.sellfy.store/p/unthinkers-modern-horror-font/)
-- [Another America](https://thebrandedquotes.sellfy.store/p/eesw/)
-- [Another Danger](https://thebrandedquotes.sellfy.store/p/lez5/)
+- [Wolves vs Monster](https://thebrandedquotes.sellfy.store/p/wolves-vs-monster-retro-horror/) License $24.
+- [American Frights](https://thebrandedquotes.sellfy.store/p/hkjuj6/) License $24.
+- [Another Danger](https://thebrandedquotes.sellfy.store/p/lez5/) License $24.
+
+Not Used:
+
+- [Another America](https://thebrandedquotes.sellfy.store/p/eesw/) License $24.
+- [Unthinkers](https://thebrandedquotes.sellfy.store/p/unthinkers-modern-horror-font/) License $24.
+
