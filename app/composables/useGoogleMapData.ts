@@ -2,7 +2,7 @@ import { ref } from 'vue'
 import type {
     AdvancedMarkerOptions,
     MapOptions,
-    MarkerOptions,
+    CustomMarker,
 } from '~/models/map-options'
 
 export function useGoogleMapData() {
@@ -118,14 +118,12 @@ export function useGoogleMapData() {
         title: "The Haunted Farm"
     });
 
-    const markerOptions = ref<MarkerOptions>({
+    const markerOptions = ref<CustomMarker>({
         position: {
             lat: 46.70255,
             lng: -96.7463833
         },
-        anchorPoint: "BOTTOM_CENTER",
-        label: "HF",
-        title: "The Haunted Farm"
+        anchorPoint: "BOTTOM_CENTER"
     });
 
     return {

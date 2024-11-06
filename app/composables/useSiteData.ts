@@ -21,6 +21,11 @@ export function useSiteData() {
             display_name: "Support",
             account: "support",
             domain: "hauntedfarm.com"
+        },
+        {
+            display_name: "Privacy",
+            account: "privacy",
+            domain: "hauntedfarm.com"
         }
     ])
     const phone = ref<Phone> ({

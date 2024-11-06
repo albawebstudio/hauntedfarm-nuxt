@@ -1,5 +1,7 @@
 <script setup lang="ts">
-
+import { useSiteData } from "~/composables/useSiteData"
+const { site, getEmailByAccount, address, phone } = useSiteData()
+const email = getEmailByAccount('privacy')
 </script>
 
 <template>
@@ -8,8 +10,8 @@
       <h1 class="text-extrabold text-4xl mb-4">Terms and Conditions of Website Use</h1>
       <p class="mb-4 mt-0 text-base font-light leading-relaxed"><em>Last updated September 3, 2024.</em></p>
 
-      <p class="mb-4 mt-0 text-base font-light leading-relaxed">Welcome to <a href="https://hauntedfarm.com" target="_blank">https://hauntedfarm.com</a>. This website (the "Website") is owned, controlled, and operated by The
-        Haunted Farm LLC, a Minnesota limited liability company (sometimes referred to in this document as "we" or "us").
+      <p class="mb-4 mt-0 text-base font-light leading-relaxed">Welcome to <NuxtLink :to="site.url" class="text-orange-700" target="_blank">{{ site.url }}</NuxtLink>. This website (the "Website") is owned, controlled, and operated by
+        {{ site.legalName }}, a Minnesota limited liability company (sometimes referred to in this document as "we" or "us").
         These Terms and Conditions of Website Use ("Terms") apply to your access and use of our services at the Website.
         Please read these Terms and our Privacy Policy carefully before accessing or using the Website. These Terms spell
         out what you can expect from us and what we expect from you.</p>
@@ -111,7 +113,7 @@
         be governed by the service agreement accompanying such software.</p>
       <p class="mb-4 mt-0 text-base font-light leading-relaxed">You must receive express written consent from us to use the Website materials for
         commercial purposes. In order to obtain that consent, which we may withhold in our sole
-        discretion, please send an email to nurse@thetoenurse.com with the following information:
+        discretion, please send an email to {{ email?.account }}@{{ email?.domain }} with the following information:
         (i) your name, position, organization, address and telephone number; (ii) a description of the
         Website content, text or graphics you want to use; (iii) where, how and when you will be
         using the materials; (iv) to whom the materials will be distributed, in what quantities and for
@@ -121,7 +123,7 @@
 
        <h3 class="text-extrabold text-2xl my-8">d. Limited License</h3>
       <p class="mb-4 mt-0 text-base font-light leading-relaxed">You may include a text link to any portion of the Website on your website. If you would like
-        to use a graphic link, please email us at nurse@thetoenurse.com. Your website, or any third-
+        to use a graphic link, please email us at {{ email?.account }}@{{ email?.domain }}. Your website, or any third-
         party websites that link to the Website (i) cannot frame or create a browser or border
         environment around any of the content on the Website or otherwise mirror any part of the
         Website, (ii) cannot imply that we or our Website are endorsing or sponsoring it or its
@@ -142,11 +144,11 @@
 
       <h2 class="text-extrabold text-3xl my-12">2. Copyright Infringement Policy</h2>
       <p class="mb-4 mt-0 text-base font-light leading-relaxed">We have adopted the following general policy toward copyright infringement in accordance with
-        the Digital Millennium Copyright Act or DMCA (posted at <a href="https://www.copyright.gov/" target="_blank">https://www.copyright.gov/</a> ). The
+        the Digital Millennium Copyright Act or DMCA (posted at <NuxtLink to="https://www.copyright.gov/" class="text-blue-600" target="_blank">https://www.copyright.gov/</NuxtLink> ). The
         address of our Designated Agent to Receive Notification of Claimed Infringement ("Designated
         Agent") is provided at the bottom of this section.</p>
 
-      <div class="w-full text-2xl font-extrabold text-center">The Haunted Farm LLC Copyright Infringement Policy</div>
+      <div class="w-full text-2xl font-extrabold text-center">{{ site.legalName }} Copyright Infringement Policy</div>
 
       <p class="mb-4 mt-0 text-base font-light leading-relaxed">It is our policy to (a) block access to or remove material that it believes in good faith to be
         copyrighted material that has been illegally copied and distributed by any of our advertisers,
@@ -233,11 +235,11 @@
       <p class="mb-4 mt-0 text-base font-light leading-relaxed">Please contact our Designated Agent to Receive Notification of Claimed Infringement at the
         following address:</p>
 
-      <p class="mb-4 mt-0 text-base font-light leading-relaxed">Copyright Agent, The Haunted Farm LLC<br/>
-        172 Gibraltar Rd<br/>
-        Fridley, MN 55421–1521<br/>
-        Phone: <a href="tel:16516660143">(651) 666-0143</a>
-        Email: <a href="mailto:privacy@thetoenurse.com">privacy@thetoenurse.com</a></p>
+      <p class="mb-4 mt-0 text-base font-light leading-relaxed">Copyright Agent, {{ site.legalName }}<br/>
+        {{  address.street1 }}<br/>
+        {{ address.city }}, {{ address.state }} {{ address.postal_code }}<br/>
+        Phone: <NuxtLink :to="'tel:' + phone.raw" class="text-orange-700">{{ phone.formatted }}</NuxtLink><br/>
+        Email: <NuxtLink :to="'mailto:' + email?.account + '@' + email?.domain" :title="email?.display_name" class="text-primary">{{ email?.account }}@{{email?.domain}}</NuxtLink></p>
 
       <h2 class="text-extrabold text-3xl my-12">3. Our Proprietary Rights</h2>
       <p class="mb-4 mt-0 text-base font-light leading-relaxed">You acknowledge and agree that the Website and any necessary software used in connection with
@@ -346,7 +348,7 @@
 
       <h2 class="text-extrabold text-3xl my-12">9. Privacy Policy</h2>
       <p class="mb-4 mt-0 text-base font-light leading-relaxed">In accordance with the terms of the Website's Privacy Policy, incorporated by reference (available
-        at <a href="https://hauntedfarm.com/privacy" target="_blank">https://hauntedfarm.com/privacy</a>/privacy), the Website respects your privacy.</p>
+        at <NuxtLink :to="site.url + 'privacy'" target="_blank" class="text-orange-700">{{ site.url }}privacy</NuxtLink>/privacy), the Website respects your privacy.</p>
 
       <h2 class="text-extrabold text-3xl my-12">10. Successors and Assigns</h2>
       <p class="mb-4 mt-0 text-base font-light leading-relaxed">These Terms shall be binding upon and inure to the benefit of the parties hereto and their respective
@@ -380,14 +382,7 @@
         waiver of any provision of these Terms. These Terms may be modified only by an instrument
         signed by both parties.</p>
 
-      <p class="mb-4 mt-0 text-base font-light leading-relaxed">Questions regarding these Terms can be directed to <a href="mailto:privacy@thetoenurse.com">privacy@thetoenurse.com</a>.</p>
-
-      <h2 class="text-extrabold text-3xl my-12">What to do with your document</h2>
-      <p class="mb-4 mt-0 text-base font-light leading-relaxed">When you export your document, it will automatically include today's date at the top. Whenever you
-        update or review your Terms and Conditions, don't forget to update the date to show your users that it's
-        current.</p>
-      <p class="mb-4 mt-0 text-base font-light leading-relaxed">Post your final document on your website somewhere where users can easily find it, such as a link in
-        the footer.</p>
+      <p class="mb-4 mt-0 text-base font-light leading-relaxed">Questions regarding these Terms can be directed to <NuxtLink :to="'mailto:' + email?.account + '@' + email?.domain" :title="email?.display_name" class="text-orange-700">{{ email?.account }}@{{ email?.domain }}</NuxtLink>.</p>
     </div>
   </section>
 </template>

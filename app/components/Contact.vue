@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import { ref, shallowRef } from 'vue';
+import { GoogleMap, CustomMarker, InfoWindow } from "vue3-google-map";
 import { useGoogleMapData } from "~/composables/useGoogleMapData"
 import { useSiteData } from "~/composables/useSiteData"
 import { useContactData } from "~/composables/useContactData";
@@ -100,7 +101,7 @@ const clearSuccess = () => {
               </svg>
             </span>
             <p class="mt-2 text-sm text-gray-500 dark:text-gray-400">Summon our team with a spooky email</p>
-            <p class="mt-2 text-sm text-primary-500 dark:text-primary-400">{{ email.account }}-dot-{{ email.domain}}</p>
+            <p class="mt-2 text-sm text-primary-500 dark:text-primary-400">{{ email?.account }}-dot-{{ email?.domain}}</p>
           </div>
 
           <div>
@@ -137,7 +138,8 @@ const clearSuccess = () => {
               :center="mapOptions.center"
               :zoom="mapOptions.zoom"
           >
-            <CustomMarker :options="markerOptions">
+            <CustomMarker
+                :options="markerOptions">
               <div style="text-align: center">
                 <div style="font-size: 1.125rem">The Haunted Farm</div>
                 <LogoSvg :fontControlled="false" width="74" height="108" />

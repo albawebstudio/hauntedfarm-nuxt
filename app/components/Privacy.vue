@@ -1,17 +1,19 @@
 <script setup lang="ts">
-
+import { useSiteData } from "~/composables/useSiteData"
+const { site, getEmailByAccount, address, phone } = useSiteData()
+const email = getEmailByAccount('privacy')
 </script>
 
 <template>
   <section class="bg-white dark:bg-black text-black-800 dark:text-secondary my-12">
     <div class="mx-auto w-3/4">
-      <h1 class="text-4xl leading-10 mb-10">Privacy Policy for The Haunted Farm</h1>
+      <h1 class="text-4xl leading-10 mb-10">Privacy Policy for {{ site.title }}</h1>
 
-      <p class="mb-4 mt-0 text-base font-light leading-relaxed">At The Haunted Farm, accessible from https://hauntedfarm.com, one of our main priorities is the privacy of our visitors. This Privacy Policy document contains types of information that is collected and recorded by The Haunted Farm and how we use it.</p>
+      <p class="mb-4 mt-0 text-base font-light leading-relaxed">At {{ site.title }}, accessible from <NuxtLink :to="site.url" :title="site.title" class="text-orange-700">{{ site.url }}</NuxtLink>, one of our main priorities is the privacy of our visitors. This Privacy Policy document contains types of information that is collected and recorded by {{ site.title }} and how we use it.</p>
 
       <p class="mb-4 mt-0 text-base font-light leading-relaxed">If you have additional questions or require more information about our Privacy Policy, do not hesitate to contact us.</p>
 
-      <p class="mb-4 mt-0 text-base font-light leading-relaxed">This Privacy Policy applies only to our online activities and is valid for visitors to our website with regards to the information that they shared and/or collect in The Haunted Farm. This policy is not applicable to any information collected offline or via channels other than this website.</p>
+      <p class="mb-4 mt-0 text-base font-light leading-relaxed">This Privacy Policy applies only to our online activities and is valid for visitors to our website with regards to the information that they shared and/or collect in {{ site.title }}. This policy is not applicable to any information collected offline or via channels other than this website.</p>
 
        <h2 class="text-3xl leading-8 my-8">Consent</h2>
 
@@ -39,22 +41,22 @@
 
        <h2 class="text-3xl leading-8 my-8">Log Files</h2>
 
-      <p class="mb-4 mt-0 text-base font-light leading-relaxed">The Haunted Farm follows a standard procedure of using log files. These files log visitors when they visit websites. All hosting companies do this and a part of hosting services' analytics. The information collected by log files include internet protocol (IP) addresses, browser type, Internet Service Provider (ISP), date and time stamp, referring/exit pages, and possibly the number of clicks. These are not linked to any information that is personally identifiable. The purpose of the information is for analyzing trends, administering the site, tracking users' movement on the website, and gathering demographic information.</p>
+      <p class="mb-4 mt-0 text-base font-light leading-relaxed">{{ site.title }} follows a standard procedure of using log files. These files log visitors when they visit websites. All hosting companies do this and a part of hosting services' analytics. The information collected by log files include internet protocol (IP) addresses, browser type, Internet Service Provider (ISP), date and time stamp, referring/exit pages, and possibly the number of clicks. These are not linked to any information that is personally identifiable. The purpose of the information is for analyzing trends, administering the site, tracking users' movement on the website, and gathering demographic information.</p>
 
 
 
 
        <h2 class="text-3xl leading-8 my-8">Advertising Partners Privacy Policies</h2>
 
-      <p class="mb-4 mt-0 text-base font-light leading-relaxed">You may consult this list to find the Privacy Policy for each of the advertising partners of The Haunted Farm.</p>
+      <p class="mb-4 mt-0 text-base font-light leading-relaxed">You may consult this list to find the Privacy Policy for each of the advertising partners of {{ site.title }}.</p>
 
-      <p class="mb-4 mt-0 text-base font-light leading-relaxed">Third-party ad servers or ad networks uses technologies like cookies, JavaScript, or Web Beacons that are used in their respective advertisements and links that appear on The Haunted Farm, which are sent directly to users' browser. They automatically receive your IP address when this occurs. These technologies are used to measure the effectiveness of their advertising campaigns and/or to personalize the advertising content that you see on websites that you visit.</p>
+      <p class="mb-4 mt-0 text-base font-light leading-relaxed">Third-party ad servers or ad networks uses technologies like cookies, JavaScript, or Web Beacons that are used in their respective advertisements and links that appear on {{ site.title }}, which are sent directly to users' browser. They automatically receive your IP address when this occurs. These technologies are used to measure the effectiveness of their advertising campaigns and/or to personalize the advertising content that you see on websites that you visit.</p>
 
-      <p class="mb-4 mt-0 text-base font-light leading-relaxed">Note that The Haunted Farm has no access to or control over these cookies that are used by third-party advertisers.</p>
+      <p class="mb-4 mt-0 text-base font-light leading-relaxed">Note that {{ site.title }} has no access to or control over these cookies that are used by third-party advertisers.</p>
 
        <h2 class="text-3xl leading-8 my-8">Third Party Privacy Policies</h2>
 
-      <p class="mb-4 mt-0 text-base font-light leading-relaxed">The Haunted Farm's Privacy Policy does not apply to other advertisers or websites. Thus, we are advising you to consult the respective Privacy Policies of these third-party ad servers for more detailed information. It may include their practices and instructions about how to opt-out of certain options. </p>
+      <p class="mb-4 mt-0 text-base font-light leading-relaxed">{{ site.title }}'s Privacy Policy does not apply to other advertisers or websites. Thus, we are advising you to consult the respective Privacy Policies of these third-party ad servers for more detailed information. It may include their practices and instructions about how to opt-out of certain options. </p>
 
       <p class="mb-4 mt-0 text-base font-light leading-relaxed">You can choose to disable cookies through your individual browser options. To know more detailed information about cookie management with specific web browsers, it can be found at the browsers' respective websites.</p>
 
@@ -81,7 +83,7 @@
 
       <p class="mb-4 mt-0 text-base font-light leading-relaxed">Another part of our priority is adding protection for children while using the internet. We encourage parents and guardians to observe, participate in, and/or monitor and guide their online activity.</p>
 
-      <p class="mb-4 mt-0 text-base font-light leading-relaxed">The Haunted Farm does not knowingly collect any Personal Identifiable Information from children under the age of 13. If you think that your child provided this kind of information on our website, we strongly encourage you to contact us immediately and we will do our best efforts to promptly remove such information from our records.</p>
+      <p class="mb-4 mt-0 text-base font-light leading-relaxed">{{ site.title }} does not knowingly collect any Personal Identifiable Information from children under the age of 13. If you think that your child provided this kind of information on our website, we strongly encourage you to contact us immediately and we will do our best efforts to promptly remove such information from our records.</p>
     </div>
   </section>
 </template>
