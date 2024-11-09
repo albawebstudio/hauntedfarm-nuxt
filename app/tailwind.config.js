@@ -157,5 +157,13 @@ export default {
         }
     },
     plugins: [],
+    safelist: [
+        'hover:bg-primary-800',
+        'hover:text-gray-900',
+        'hover:bg-gray-100',
+        'focus:ring-4',
+        'focus:ring-gray-400',
+        'sm:ms-4'
+    ],
 }
 
