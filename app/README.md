@@ -5,7 +5,7 @@ Look at the [Nuxt 3 documentation](https://nuxt.com/docs/getting-started/introdu
 ## Requirements
 
 - Node package manager (npm, pnpm, yarn, or bun)
-- [AWS CLI](https://aws.amazon.com/cli/) along with AWS credentials 
+- [AWS CLI](https://aws.amazon.com/cli/) along with AWS credentials
 - [Netlify CLI](https://www.netlify.com/platform/core/cli/#install) If using Netlify
 
 ## Setup

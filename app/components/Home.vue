@@ -12,7 +12,7 @@ const yrsHaunting = date.getFullYear() - site.value.established
 <template>
   <section id="home" class="bg-center bg-no-repeat bg-black" style="background-image: linear-gradient(rgba(0, 0, 0, 0.7),rgba(0, 0, 0, 0.4)),url('/images/main2.jpg')">
     <div class="px-4 mx-auto max-w-screen-xl text-center py-24">
-      <h1 class="mb-4 text-4xl font-extrabold tracking-tight leading-none text-white font-american-frights md:text-5xl lg:text-6xl uppercase" v-html="home.title"></h1>
+      <h1 class="mb-4 text-4xl font-extrabold tracking-tight leading-none text-white font-american-frights md:text-5xl lg:text-6xl uppercase">Haunting for <span class="text-primary md:text-7xl lg:text-8xl px-2">{{ yrsHaunting }}</span> Years</h1>
       <p v-for="content in home.content" class="mb-8 text-lg font-normal text-gray-300 lg:text-xl sm:px-16 lg:px-48" v-html="content"></p>
       <div class="flex flex-col space-y-4 sm:flex-row sm:justify-center sm:space-y-0">
         <template v-for="(cta, idx) in home.ctas" :key="idx">

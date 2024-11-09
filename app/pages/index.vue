@@ -6,19 +6,17 @@ definePageMeta({
 
 <template>
   <div>
-      <Home />
+    <Home/>
 
-    <About />
+    <About/>
 
-    <Tickets />
+    <Tickets/>
 
-<!--    <Social />-->
+    <Schedule/>
 
-    <Schedule />
+    <Media/>
 
-    <Media />
-
-    <Contact />
+    <Contact/>
 
   </div>
 </template>

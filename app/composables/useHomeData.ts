@@ -1,14 +1,13 @@
 import { ref } from 'vue'
 
-import { useSiteData } from "~/composables/useSiteData"
 import type { Home, Cta } from '~/models/home'
-
-const date = new Date()
-const { site } = useSiteData()
+import { useRuntimeConfig } from "#app";
 
 export function useHomeData() {
-    const currentYear = date.getFullYear()
-    const yrsHaunting = date.getFullYear() - site.value.established
+    const runtimeConfig = useRuntimeConfig()
+    const date = new Date()
+    const startDate = new Date(runtimeConfig.public.startDate)
+    const currentYear = date < startDate ? startDate.getFullYear() : date.getFullYear()
 
     const ctas = ref<Cta[]>([
         {
@@ -25,7 +24,7 @@ export function useHomeData() {
         }
     ])
     const home = ref<Home>({
-        title: `Haunting for <span class="text-primary-600 md:text-7xl lg:text-8xl px-2">${yrsHaunting}</span> Years`,
+        title: ``,
         content: [
             `Welcome to <span class="text-white font-another-danger px-2">The Haunted Farm</span><br/>Come join us in ${currentYear} for our most <span class="text-primary font-wolves-vs-monster">chilling</span> season at The Haunted Farm`
         ],
