@@ -13,7 +13,7 @@ const { about } = useAboutData();
       <div class="text-secondary mt-8">{{ about.content }}</div>
     </div>
 
-    <div class="w-2/3 mx-auto grid lg:grid-cols-2 lg:gap-5">
+    <div class="w-full sm:w-2/3 mx-auto grid lg:grid-cols-2 lg:gap-5">
       <div v-for="item in about.items" class="rounded-xl bg-white p-6 pb-8 text-center shadow-xl mb-8">
         <div
             class="mx-auto flex h-16 w-16 -translate-y-12 transform items-center justify-center rounded-full bg-primary-600 shadow-lg shadow-primary-700/40">

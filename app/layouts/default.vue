@@ -45,9 +45,12 @@ useHead({
 </script>
 
 <template>
-  <CommonNavigation />
-  <slot></slot>
-  <CommonFooter />
+  <div>
+    <CommonNavigation />
+    <slot></slot>
+    <CommonFooter />
+    <div id="modals" class="relative z-20"></div>
+  </div>
 </template>
 
 <style scoped>

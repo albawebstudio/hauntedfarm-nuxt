@@ -79,8 +79,32 @@ export default defineNuxtConfig({
     headers: {
       contentSecurityPolicy: {
         'img-src': ["'self'", "data:", "https://maps.gstatic.com/", "https://maps.googleapis.com/"],
+        'script-src': [
+          "'self'",
+          "'unsafe-eval'",  // Required for the QR code library
+          'https:',
+          "'unsafe-inline'"
+        ],
       }
     },
+  },
+
+  content: {
+    markdown: {
+      toc: {
+        depth: 3,
+        searchDepth: 3
+      },
+      rehypePlugins: [
+        'rehype-external-links'
+      ]
+    }
+  },
+
+  vue: {
+    compilerOptions: {
+      isCustomElement: (tag) => ['qr-code'].includes(tag)
+    }
   },
 
 })

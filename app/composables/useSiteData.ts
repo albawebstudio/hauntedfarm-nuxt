@@ -126,14 +126,14 @@ export function useSiteData() {
         },
         {
             title: "terms & conditions",
-            to: "/terms",
+            to: "/legal/terms",
             external: true,
             icon: null,
             displayText: "Terms & Conditions",
         },
         {
             title: "privacy policy",
-            to: "/privacy",
+            to: "/legal/privacy",
             external: true,
             icon: null,
             displayText: "Privacy Policy",

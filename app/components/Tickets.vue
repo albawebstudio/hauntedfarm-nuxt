@@ -1,13 +1,29 @@
 <script setup lang="ts">
+import { shallowRef } from "vue";
 import { useTicketData } from "~/composables/useTicketData";
 import { FontAwesomeIcon } from "@fortawesome/vue-fontawesome";
+import LogoSvg from "/public/images/logo.svg";
+import BaseModal from "~/components/common/BaseModal.vue";
+import Coupon from "~/components/common/Coupon.vue";
+import { format } from 'date-fns';
+
+const config = useRuntimeConfig()
+const startDate = config.public.startDate
+
 const { ticket } = useTicketData();
+const showModal = shallowRef(false);
 let USDollar = new Intl.NumberFormat('en-US', {
   style: 'currency',
   currency: 'USD',
 });
-function formatCurrency(price: number): string {
+const formatCurrency = (price: number): string => {
   return USDollar.format(price);
+}
+const formatDate = (dateStr: string): string => {
+  return format(new Date(dateStr), "MMMM do, yyyy"); // "do" adds the ordinal suffix automatically
+};
+const cancelModal = () => {
+  showModal.value = false;
 }
 </script>
 
@@ -44,13 +60,16 @@ function formatCurrency(price: number): string {
                 <span class="font-american-frights text-orange-600 text-5xl font-bold tracking-tight">{{ formatCurrency(pass.admission.price) }}</span>
                 <span class="text-sm font-semibold leading-6 tracking-wide text-gray-300">{{ pass.admission.currency }}</span>
               </p>
-              <NuxtLink :to="ticket.cta.href" class="mt-10 block w-full rounded-md bg-primary-600 px-3 py-2 text-center text-sm font-semibold text-white shadow-sm hover:bg-primary-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary-600"><font-awesome-icon icon="fas fa-ticket"/> {{ ticket.cta.label }}</NuxtLink>
+              <NuxtLink @click="showModal = true" class="mt-10 block w-full rounded-md bg-primary-600 px-3 py-2 text-center text-sm font-semibold text-white shadow-sm hover:bg-primary-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary-600"><font-awesome-icon icon="fas fa-ticket"/> {{ ticket.cta.label }}</NuxtLink>
               <p class="mt-6 text-xs leading-5 text-gray-200">{{ pass.admission.terms }}</p>
             </div>
           </div>
         </div>
       </div>
     </div>
+    <BaseModal :show="showModal">
+      <Coupon @cancel="cancelModal" />
+    </BaseModal>
   </section>
 </template>
 

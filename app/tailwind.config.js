@@ -156,7 +156,9 @@ export default {
             ],
         }
     },
-    plugins: [],
+    plugins: [
+        require('@tailwindcss/typography')
+    ],
     safelist: [
         'hover:bg-primary-800',
         'hover:text-gray-900',

@@ -29,7 +29,7 @@ onMounted(() => {
 
 <template>
   <section id="schedule" class="py-12 bg-gray-800">
-    <div class="mx-auto w-1/2 my-12">
+    <div class="mx-auto w-5/6 md:w-1/2 my-12">
       <h2 class="font-wolves-vs-monster text-amber-700 text-4xl leading-relaxed text-center uppercase">{{ schedule.title }}</h2>
       <div class="text-secondary text-center mt-8">{{ schedule.content }}</div>
 
