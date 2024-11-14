@@ -31,7 +31,7 @@ const cancelModal = () => {
   <!-- component -->
   <section id="tickets" class="py-24 sm:py-32" style="background-image: linear-gradient(rgba(0, 0, 0, 0.7),rgba(0, 0, 0, 0.4)),url('/images/tickets.jpg')">
     <div class="mx-auto max-w-7xl px-6 lg:px-8">
-      <div class="mx-auto max-w-2xl sm:text-center">
+      <div class="mx-auto max-w-2xl text-center">
         <h2 class="font-wolves-vs-monster text-4xl leading-relaxed font-bold tracking-tight text-orange-700">{{ ticket.title }}</h2>
         <p v-for="content in ticket.content" :key="content.id" class="mt-6 text-lg leading-8 text-gray-400" v-html="content"></p>
       </div>

@@ -8,7 +8,7 @@ const { about } = useAboutData();
 <template>
   <section id="about" class="h-full min-h-screen w-full bg-gray-800 pt-12 p-4">
 
-    <div class="text-center w-1/2 mx-auto mb-12">
+    <div class="text-center w-3/4 md:w-1/2 mx-auto mb-12">
       <h2 class="font-wolves-vs-monster text-amber-700 text-4xl leading-relaxed uppercase">{{ about.title }}</h2>
       <div class="text-secondary mt-8">{{ about.content }}</div>
     </div>

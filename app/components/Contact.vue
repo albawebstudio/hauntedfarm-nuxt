@@ -84,7 +84,7 @@ const clearSuccess = () => {
 <template>
   <section id="contact" class="bg-white dark:bg-gray-900">
     <div class="container px-6 py-12 mx-auto">
-      <div class="text-center w-2/3 mx-auto">
+      <div class="text-center w-full md:w-2/3 mx-auto">
         <h2 class="font-wolves-vs-monster text-4xl leading-relaxed font-bold tracking-tight text-orange-700">{{ contact.title }}</h2>
         <p v-for="content in contact.content" class="mt-3 text-gray-500 dark:text-gray-400" v-html="content"></p>
         <address class="text-orange-700">{{ address.street1 }}, {{ address.city }}, {{ address.state }} {{ address.postal_code }}</address>

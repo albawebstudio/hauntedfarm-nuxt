@@ -28,7 +28,7 @@ const yrsHaunting = date.getFullYear() - site.value.established
           </NuxtLink>
         </template>
       </div>
-      <div class="flex mx-auto my-24 w-2/3">
+      <div class="flex mx-auto my-24 w-full md:w-2/3">
         <NuxtLink
             v-for="social_link in site.social_links"
             :key="social_link.label"
