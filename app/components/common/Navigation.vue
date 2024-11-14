@@ -19,7 +19,7 @@ const toggleNav = () => (showMenu.value = !showMenu.value);
           <LogoSrc :alt="site.title"
                    :fontControlled="false"
                    class="h-16"/>
-          <span class="self-center text-4xl font-semibold whitespace-nowrap text-primary dark:text-orange-700 font-another-danger">{{ site.title }}</span>
+          <span class="self-center text-3xl sm:text-4xl font-semibold whitespace-nowrap text-primary dark:text-orange-700 font-another-danger drop-shadow-glow">{{ site.title }}</span>
         </NuxtLink>
         <button @click="toggleNav"
                 data-collapse-toggle="navbar-default"

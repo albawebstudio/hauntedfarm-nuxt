@@ -123,6 +123,12 @@ export default {
                 merlin: hauntedfarm.colors.merlin,
                 orange: hauntedfarm.colors.japonica,
             },
+            dropShadow: {
+                glow: [
+                    "0 0px 20px rgba(253, 250, 249, 0.35)",
+                    "0 0px 20px rgba(253, 250, 249, 0.2)"
+                ]
+            }
         },
         fontFamily: {
             'sans': [
