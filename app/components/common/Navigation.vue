@@ -15,11 +15,11 @@ const toggleNav = () => (showMenu.value = !showMenu.value);
       <div class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
         <NuxtLink to="/#home"
             external
-            class="flex items-center space-x-3 rtl:space-x-reverse">
+            class="flex items-center space-x-3 sm:space-x-8 rtl:space-x-reverse">
           <LogoSrc :alt="site.title"
                    :fontControlled="false"
                    class="h-16"/>
-          <span class="self-center text-3xl sm:text-4xl font-semibold whitespace-nowrap text-primary dark:text-orange-700 font-another-danger drop-shadow-glow text-stroke">{{ site.title }}</span>
+          <span class="self-center text-3xl sm:text-4xl font-semibold whitespace-nowrap text-primary dark:text-orange-700 font-another-danger drop-shadow-dark-glow text-stroke-dark dark:drop-shadow-glow dark:text-stroke-light">{{ site.title }}</span>
         </NuxtLink>
         <button @click="toggleNav"
                 data-collapse-toggle="navbar-default"
