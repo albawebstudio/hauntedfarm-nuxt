@@ -12,6 +12,13 @@ html {
     letter-spacing: 1rem;
 }
 
+.text-stroke {
+    text-shadow:
+            -1px -1px 0 #ECC7B8,
+            1px -1px 0 #ECC7B8,
+            -1px 1px 0 #ECC7B8,
+            1px 1px 0 #ECC7B8;
+}
 .pricing-box {
     margin: 0.75rem;
     text-align: center;

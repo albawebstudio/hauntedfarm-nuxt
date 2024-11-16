@@ -125,8 +125,12 @@ export default {
             },
             dropShadow: {
                 glow: [
-                    "0 0px 20px rgba(253, 250, 249, 0.35)",
-                    "0 0px 20px rgba(253, 250, 249, 0.2)"
+                    "0 0px 10px rgba(255, 255, 255, 0.35)",
+                    "0 0px 20px rgba(255, 255, 255, 0.2)"
+                ],
+                'light-glow': [
+                    "0 0px 20px rgba(227, 174, 152, 0.35)",
+                    "0 0px 20px rgba(227, 174, 152, 0.2)"
                 ]
             }
         },

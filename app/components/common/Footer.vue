@@ -14,7 +14,7 @@ const currentYear = date.getFullYear();
       <div class="sm:flex sm:items-center sm:justify-between">
         <NuxtLink :to="site.url" class="flex items-center mb-4 sm:mb-0 space-x-3 rtl:space-x-reverse">
           <LogoSrc :alt="site.title" :fontControlled="false" class="h-8" />
-          <span class="self-center text-2xl font-semibold whitespace-nowrap text-primary dark:text-orange-700 font-another-danger">{{ site.title }}</span>
+          <span class="self-center text-2xl font-semibold whitespace-nowrap text-primary dark:text-orange-700 font-another-danger drop-shadow-glow">{{ site.title }}</span>
         </NuxtLink>
         <ul class="flex flex-wrap items-center my-6 text-xs sm:text-sm font-medium text-gray-500 sm:mb-0 dark:text-gray-400">
           <li v-for="link in site.footer_links">
