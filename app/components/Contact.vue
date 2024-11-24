@@ -62,7 +62,7 @@ const submitForm = async () => {
   try{
     const response = await fetch(`${apiUrl}/contact-form`, {
       method: "POST",
-      body: JSON.stringify(form),
+      body: JSON.stringify(form.value),
     } )
     if (!response.ok) {
       throw new Error('Failed to submit form');
