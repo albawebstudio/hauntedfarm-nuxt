@@ -1,7 +1,7 @@
 {
   "name": "hauntedfarm-api",
   "version": "1.0.0",
-  "description": "API handler for the HauntedFarm Nuxt/Tailwwind project",
+  "description": "API handler for the HauntedFarm Nuxt/Tailwind project",
   "main": "handler.js",
   "scripts": {
     "deploy:development": "sls deploy --stage development",

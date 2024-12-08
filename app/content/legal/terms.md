@@ -234,7 +234,7 @@ following address:
 Copyright Agent, The Haunted Farm
 1947 130th Avenue South
 Moorhead, MN 56560<br/>
-Phone: [+1 (218) 585-4539](+12185854539)
+Phone: [+1 (218) 585-4539](tel:+12185854539)
 Email: [support@hauntedfarm.com](mailto:support@hauntedfarm.com)
 
 3. ### Our Proprietary Rights
