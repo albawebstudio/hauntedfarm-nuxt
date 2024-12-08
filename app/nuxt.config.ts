@@ -34,10 +34,13 @@ export default defineNuxtConfig({
     "nuxt-svgo",
     'nuxt-security',
     'nuxt-gtag',
+    'nuxt-lodash',
+    '@pinia/nuxt',
   ],
 
   plugins: [
     '~/plugins/vue3-google-map',
+    '~/plugins/recaptcha',
   ],
 
   build: {
@@ -47,11 +50,13 @@ export default defineNuxtConfig({
   },
 
   runtimeConfig: {
+    recaptchaSecretKey: process.env.RECAPTCHA_SECRET_KEY,
     public: {
       startDate: process.env.START_DATE,
       endDate: process.env.END_DATE,
       apiUrl: process.env.API_URL,
       googleMapsApiKey: process.env.GOOGLE_MAPS_API_KEY,
+      recaptchaSiteKey: process.env.RECAPTCHA_SITE_KEY,
     }
   },
 
