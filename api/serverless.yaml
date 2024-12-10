@@ -14,7 +14,7 @@ provider:
   stage: ${opt:stage, 'development'}
   runtime: nodejs20.x
   iam:
-    role: arn:aws:iam::253548989411:role/hauntedfarm-api
+    role: arn:aws:iam::054037105907:role/hauntedfarm-api
 
 functions:
   contactForm:
@@ -28,11 +28,11 @@ functions:
 
 custom:
   profiles:
-    development: default
-    staging: default
-    production: default
+    development: hauntedfarm
+    staging: hauntedfarm
+    production: hauntedfarm
   sesTemplates:
     addStage: true                             # Specifies whether to add stage to template name (default false)
-    configFile: './email-templates.js' # Config file path (default './ses-email-templates/index.js')
+    configFile: './email-templates.js'         # Config file path (default './ses-email-templates/index.js')
     disableAutoDeploy: true                    # Specifies whether to sync templates while sls deploy (default false)
     region: 'us-east-1'                        # Specifies AWS region for SES templates (not required)
