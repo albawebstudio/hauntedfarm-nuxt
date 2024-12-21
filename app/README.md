@@ -6,19 +6,15 @@ Look at the [Nuxt 3 documentation](https://nuxt.com/docs/getting-started/introdu
 
 - Node package manager (npm, pnpm, yarn, or bun)
 - [AWS CLI](https://aws.amazon.com/cli/) along with AWS credentials
-- [Netlify CLI](https://www.netlify.com/platform/core/cli/#install) If using Netlify
+
+## Suggested Applications
+
+- Node Version Manager ([nvm - Node Version Manager](https://github.com/nvm-sh/nvm) or [n - Node Version Management](https://github.com/tj/n))
+- IDE such as [Visual Studio Code](https://code.visualstudio.com/) or [WebStorm](https://www.jetbrains.com/webstorm/)
 
 ## Setup
 
 Make sure to install the dependencies (using your preferred package manager):
-
-**NOTE:** The `netlify.toml` file is used to configure Netlify.
-
-As this project is using Netlify, you will want to use an existing or new Netlify account for 
-locally development and or deploying the application.
-
-**DO NOT** add sensitive information to the `netlify.toml` file or the .env.example file. 
-Use the Netlify UI (admin) to manage your secrets.
 
 ```bash
 # pnpm
@@ -36,75 +32,64 @@ bun install
 
 ### Setup Environment Variables
 
-If you are using Netlify, you can use the Netlify UI to manage your secrets. 
-The other option is to copy the .env.example file to a .env file and add your secrets.
+There are a few options for setting up the environmental variables.
+
+#### Option One - SSM Parameter Store
+
+If you have the AWS CLI and credentials setup, you can use the following instructions in your terminal:
+
+1. Navigate to the `/app` folder.
+2. Run the following command.
+
+```bash
+aws ssm get-parameter --region us-east-1 \
+        --name /hauntedfarm/app/.env.development \
+        --profile hauntedfarm \
+        --query Parameter.Value \
+        --with-decryption \
+        --output text > ./.env.development
+```
+
+This should copy the latest `.env.development` file stored in the parameter store to the `/app` directory.
+
+Copy the `.env.development` file and rename the file to `.env`.
+
+#### Option Two - Manual Configuration
+
+Copy the `.env.example` file to rename the copy to `.env` file. Open the `.env` file in your preferred editor and 
+add the necessary values
 
 1. Add the start date and time for the application as the value of `START_DATE`.
 2. Add the end date and time for the application as the value of `END_DATE`.
-3. Add the Google Maps Api key to enable the Google Maps API as the value of `GOOGLE_MAPS_API_KEY`.
+3. Add the AWS API URL (this is displayed after deploying the API) as the value of `API_URL`.
+4. Add the Google Maps Api key to enable the Google Maps API as the value of `GOOGLE_MAPS_API_KEY`.
+5. Add the Google reCAPTCHA site key as the value of `RECAPTCHA_SITE_KEY`.
+6. Add the Google reCAPTCHA site key as the value of `RECAPTCHA_SECRET_KEY`.
 
 ## Development Server
 
-You have a few options for starting the development server. The suggestion is to use `netlify dev`,
-but the standard `nuxt dev` is available.
+You can now start the Nuxt development server. Use the command `run dev` using your preferred package manager.
 
 ```bash
 # npm
-npm run netlify-dev
--- or --
 npm run dev
 
 # pnpm
-pnpm run netlify-dev
--- or --
 pnpm run dev
 
 # yarn
-yarn netlify-dev
--- or --
 yarn run dev
 
 # bun
-bun run netlify-dev
--- or --
 bun run dev
 ```
 
+Check out the [deployment documentation](https://nuxt.com/docs/getting-started/deployment) for more information.
+
 ## Production
 
-Build the application for production:
-
-```bash
-# npm
-npm run build
-
-# pnpm
-pnpm run build
-
-# yarn
-yarn build
-
-# bun
-bun run build
-```
-
-Locally preview production build:
-
-```bash
-# npm
-npm run preview
-
-# pnpm
-pnpm run preview
-
-# yarn
-yarn preview
-
-# bun
-bun run preview
-```
-
-Check out the [deployment documentation](https://nuxt.com/docs/getting-started/deployment) for more information.
+In order to affect change in the production/live environment, you will need to update the main repository branch.
+The application is using AWS Amplify which has a hook to capture changes to the main branch.
 
 ---
 
