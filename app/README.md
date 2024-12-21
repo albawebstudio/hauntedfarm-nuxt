@@ -96,6 +96,7 @@ instructions to deploy the changes to the staging site:
 
 1. Check out the staging branch (`git fetch && git checkout staging`)
 2. Merge your committed changes from `feature/add-blog-post` branch into `staging` branch. (`git merge feature/add-blog-post`)
+3. Add changes (`git add *`)
 3. Commit the change (`git commit -m "merge feature/add-blog-post into staging"`)
 4. Push the changes to staging back to origin (`git push origin staging`)
 
