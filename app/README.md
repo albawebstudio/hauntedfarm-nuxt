@@ -86,6 +86,22 @@ bun run dev
 
 Check out the [deployment documentation](https://nuxt.com/docs/getting-started/deployment) for more information.
 
+## Staging
+
+A staging environment has been created via AWS Amplify. Let's assume you have created a new branch `feature/add-blog-post`.
+If you would like to view those changes online, but not deploy to the live/production site, you can use the following
+instructions to deploy the changes to the staging site:
+
+[https://staging.dk2ji6cxqtc31.amplifyapp.com/](https://staging.dk2ji6cxqtc31.amplifyapp.com/)
+
+1. Check out the staging branch (`git fetch && git checkout staging`)
+2. Merge your committed changes from `feature/add-blog-post` branch into `staging` branch. (`git merge feature/add-blog-post`)
+3. Commit the change (`git commit -m "merge feature/add-blog-post into staging"`)
+4. Push the changes to staging back to origin (`git push origin staging`)
+
+Allow the changes to be picked up and processed by AWS Amplify (about five minutes) and then view the changes using
+[https://staging.dk2ji6cxqtc31.amplifyapp.com/](https://staging.dk2ji6cxqtc31.amplifyapp.com/).
+
 ## Production
 
 In order to affect change in the production/live environment, you will need to update the main repository branch.
