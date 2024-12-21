@@ -96,8 +96,9 @@ instructions to deploy the changes to the staging site:
 
 1. Check out the staging branch (`git fetch && git checkout staging`)
 2. Merge your committed changes from `feature/add-blog-post` branch into `staging` branch. (`git merge feature/add-blog-post`)
-3. Commit the change (`git commit -m "merge feature/add-blog-post into staging"`)
-4. Push the changes to staging back to origin (`git push origin staging`)
+3. Add changes (`git add *`)
+4. Commit the change (`git commit -m "merge feature/add-blog-post into staging"`)
+5. Push the changes to staging back to origin (`git push origin staging`)
 
 Allow the changes to be picked up and processed by AWS Amplify (about five minutes) and then view the changes using
 [https://staging.dk2ji6cxqtc31.amplifyapp.com/](https://staging.dk2ji6cxqtc31.amplifyapp.com/).
