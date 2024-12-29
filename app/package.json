@@ -8,9 +8,8 @@
   "scripts": {
     "build": "nuxt build",
     "dev": "nuxt dev",
-    "netlify-dev": "netlify dev",
     "generate": "nuxt generate",
-    "preview": "nuxt preview",
+    "preview": "nuxi build && nuxt preview",
     "postinstall": "nuxt prepare"
   },
   "dependencies": {
