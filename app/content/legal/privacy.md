@@ -1,6 +1,6 @@
 ---
 title: "Privacy Policy for The Haunted Farm"
-last_updated_at: "Last updated November 11, 2024."
+last_updated_at: "Last updated January 8, 2025."
 ---
 
 At The Haunted Farm, accessible from [https://hauntedfarm.com/](https://hauntedfarm.com/), one of our main priorities 

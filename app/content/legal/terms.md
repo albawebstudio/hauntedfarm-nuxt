@@ -1,6 +1,6 @@
 ---
 title: "Terms and Conditions of Website Use"
-last_updated_at: "Last updated January 8, 2024."
+last_updated_at: "Last updated January 8, 2025."
 ---
 
 Welcome to [https://hauntedfarm.com](https://hauntedfarm.com). This website (the "Website") is owned, controlled, 
