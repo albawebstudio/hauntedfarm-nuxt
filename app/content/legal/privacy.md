@@ -9,7 +9,7 @@ recorded by The Haunted Farm and how we use it.
 
 If you have additional questions or require more information about our Privacy Policy, do not hesitate to contact us.
 
-This Privacy Policy applies only to our online activities and is valid for visitors to our website with regards to 
+This Privacy Policy applies only to our online activities and is valid for visitors to our website in regard to 
 the information that they shared and/or collect in The Haunted Farm. This policy is not applicable to any information 
 collected offline or via channels other than this website.
 
@@ -101,7 +101,7 @@ inaccurate. You also have the right to request that we complete the information 
 **The right to restrict processing** – You have the right to request that we restrict the processing of your 
 personal data, under certain conditions.
 
-**The right to object to processing* – You have the right to object to our processing of your personal data, 
+**The right to object to processing** – You have the right to object to our processing of your personal data, 
 under certain conditions.
 
 **The right to data portability** – You have the right to request that we transfer the data that we have 
@@ -117,4 +117,4 @@ guardians to observe, participate in, and/or monitor and guide their online acti
 
 The Haunted Farm does not knowingly collect any Personal Identifiable Information from children under the age of 13. 
 If you think that your child provided this kind of information on our website, we strongly encourage you to contact 
-us immediately and we will do our best efforts to promptly remove such information from our records.
+us immediately, and we will do our best efforts to promptly remove such information from our records.

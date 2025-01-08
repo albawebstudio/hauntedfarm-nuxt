@@ -1,6 +1,6 @@
 ---
 title: "Terms and Conditions of Website Use"
-last_updated_at: "Last updated September 3, 2024."
+last_updated_at: "Last updated January 8, 2024."
 ---
 
 Welcome to [https://hauntedfarm.com](https://hauntedfarm.com). This website (the "Website") is owned, controlled, 
@@ -19,7 +19,7 @@ use the Website.
 
 1. ### Restrictions on Use of Materials
 
-    a. **Licensing, Eligibility, and Use of the Website**
+  a. **Licensing, Eligibility, and Use of the Website**
 
 When you provide information to the Website, you agree to provide only true, accurate,
 current and complete information. If you provide any information that is untrue, inaccurate,
@@ -33,7 +33,7 @@ technology (collectively, the "Technology"). We reserve the right to charge fees
 Technology in the future.
 
 You understand and agree that the Website is provided "as-is" and that we assume no
-responsibility for the timeliness, deletion, mis-delivery, or failure to store any user
+responsibility for the timeliness, deletion, misdelivery, or failure to store any user
 communications or personalization settings, if any. You may not (i) copy, modify,
 redistribute, sell, sublicense, assign, or transfer, any Technology, (ii) copy or adapt the source
 or object code of the Website's software, HTML, JavaScript or other programming code, or
@@ -70,9 +70,9 @@ or services on behalf of such minor child. By using the Website or services on b
 minor child, you represent and warrant that you are the parent or legal guardian of such
 child. If you do not qualify under these terms, do not use the Website or services. By using
 the Website and/or the services, you represent and warrant that you have the right, authority,
-and capacity to enter into these Terms and to abide by all of the terms and conditions set
+and capacity to enter into these Terms and to abide by all the terms and conditions set
 forth herein. The Website is administered in the U.S. and intended for U.S. users; any use
-outside of the U.S. is at the user's own risk and users are responsible for compliance with
+outside the U.S. is at the user's own risk and users are responsible for compliance with
 any local laws applicable to their use of the services or the Website.
 
   b. **Trademarks**
@@ -103,7 +103,7 @@ arrangement, and enhancement of such Company Content. You may not modify, remove
 delete, augment, add to, publish, transmit, participate in the transfer or sale of, create
 derivative works from, or in any way exploit any of the Company Content or any material
 from any website owned, operated, licensed or controlled by us, in whole or in part. You may
-not put any our graphics or text on your own website. If no specific restrictions are
+not put any of our graphics or text on your own website. If no specific restrictions are
 displayed, you may make copies of select portions of the Company Content, provided that
 the copies are made only for your personal use and that you maintain any notices contained
 in the Company Content, such as all copyright notices, trademark legends, or other
@@ -122,14 +122,14 @@ discretion, please send an email to {{ email?.account }}@{{ email?.domain }} wit
 Website content, text or graphics you want to use; (iii) where, how and when you will be
 using the materials; (iv) to whom the materials will be distributed, in what quantities and for
 what purpose; and (v) other information that will be included with the Website material. We
-will respond by email and inform you whether or not we grant you permission to use the
+will respond by email and inform you whether we grant you permission to use the
 material. This decision will be made at our sole discretion.
 
   d. **Limited License**
 
 You may include a text link to any portion of the Website on your website. If you would like
-to use a graphic link, please email us at {{ email?.account }}@{{ email?.domain }}. Your website, or any third-
-party websites that link to the Website (i) cannot frame or create a browser or border
+to use a graphic link, please email us at {{ email?.account }}@{{ email?.domain }}. Your website, or any
+third-party websites that link to the Website (i) cannot frame or create a browser or border
 environment around any of the content on the Website or otherwise mirror any part of the
 Website, (ii) cannot imply that we or our Website are endorsing or sponsoring it or its
 products, unless we have given our prior written consent, (iii) cannot present false
@@ -154,14 +154,14 @@ the Digital Millennium Copyright Act or DMCA (posted at [https://www.copyright.g
 The address of our Designated Agent to Receive Notification of Claimed Infringement ("Designated
 Agent") is provided at the bottom of this section.
 
-## The Haunted Farm Copyright Infringement Policy</div>
+## The Haunted Farm Copyright Infringement Policy
 
 It is our policy to (a) block access to or remove material that it believes in good faith to be
 copyrighted material that has been illegally copied and distributed by any of our advertisers,
 affiliates, content providers, members or users; and (b) remove and discontinue service to repeat
 offenders.
 
-  a. **Procedure for Reporting Copyright Infringements.**
+a. **Procedure for Reporting Copyright Infringements.**
 
 If you believe that material or content residing on or accessible through the Website or the
 services infringes a copyright, please send a notice of copyright infringement containing the
@@ -182,7 +182,7 @@ Infringement Notification"):
   accurate and the notifying party is authorized to make the complaint on behalf of
   the copyright owner.
 
-  b. **Upon Receipt of a Bona Fide Infringement Notification**
+b. **Upon Receipt of a Bona Fide Infringement Notification**
 
 Once Proper Bona Fide Infringement Notification is received by the Designated Agent, it is
 our policy:
@@ -193,7 +193,7 @@ our policy:
 - that for repeat offenders, we will also terminate such content provider's, member's
   or user's access to the service.
 
-  c. **Procedure to Supply a Counter-Notice to the Designated Agent**
+c. **Procedure to Supply a Counter-Notice to the Designated Agent**
 
 If the content provider, member or user believes that the material that was removed or to
 which access was disabled is either not infringing, or the content provider, member or user
@@ -217,10 +217,10 @@ below:
   district in which we are located, and that such person or entity will accept service
   of process from the person who provided notification of the alleged infringement.
 
-  d. **Removal**
+d. **Removal**
 
-If a counter-notice is received by the Designated Agent, we may send a copy of the counter-
-notice to the original complaining party informing that person that it may replace the
+If a counter-notice is received by the Designated Agent, we may send a copy of the counter-notice
+to the original complaining party informing that person that it may replace the
 removed material or cease disabling it in 10 business days. Unless the copyright owner files
 an action seeking a court order against the content provider, member or user, the removed
 material may be replaced or access to it restored in 10 to 14 business days or more after
@@ -231,10 +231,10 @@ receipt of the counter-notice, at our discretion.
 Please contact our Designated Agent to Receive Notification of Claimed Infringement at the
 following address:
 
-Copyright Agent, The Haunted Farm
-1947 130th Avenue South
-Moorhead, MN 56560<br/>
-Phone: [+1 (218) 585-4539](tel:+12185854539)
+Copyright Agent, The Haunted Farm  
+1947 130th Avenue South  
+Moorhead, MN 56560  
+Phone: [+1 (218) 585-4539](tel:+12185854539)  
 Email: [support@hauntedfarm.com](mailto:support@hauntedfarm.com)
 
 3. ### Our Proprietary Rights
@@ -293,7 +293,7 @@ display the content you uploaded to the Website on or before the time of termina
 specifically request that we remove such content. We may at our sole discretion terminate this
 license at any time, with or without prior notification, in the event you fail to comply with these
 Terms or for any other reason that we believe, in our sole discretion, is appropriate, by deactivating
-your user name and password and/or suspending operation of the system. Upon termination, you
+your username and password and/or suspending operation of the system. Upon termination, you
 must destroy all materials obtained from the Website and any and all other Company websites, and
 all copies thereof, whether made under these Terms or otherwise.
 
@@ -320,7 +320,7 @@ INCLUDING BUT NOT LIMITED TO LOSSES ARISING FROM YOUR RELIANCE ON
 ANY INFORMATION OBTAINED FROM THE WEBSITE OR FROM MISTAKES,
 OMISSIONS, INTERRUPTIONS, DELETION OF FILES OR EMAIL, ERRORS,
 DEFECTS, VIRUSES, DELAYS IN OPERATION OR TRANSMISSION, OR ANY
-FAILURE OF PERFORMANCE, WHETHER OR NOT RESULTING FROM ACTS OF
+FAILURE OF PERFORMANCE, WHETHER RESULTING FROM ACTS OF
 GOD, COMMUNICATIONS FAILURE, THEFT, DESTRUCTION, OR UNAUTHORIZED
 ACCESS TO THE WEBSITE'S RECORDS, PROGRAMS OR SERVICES. YOU HEREBY
 ACKNOWLEDGE THAT THIS PARAGRAPH SHALL APPLY TO ALL CONTENT,
@@ -370,7 +370,7 @@ and conditions hereof.
 
 These Terms shall be governed by, and construed in accordance with, the laws of Minnesota,
 without regard to its choice of laws principles. The Website is controlled, operated, and
-administered from within the USA. If you access the Website from a location outside of the USA,
+administered from within the USA. If you access the Website from a location outside the USA,
 you are responsible for compliance with all local laws.
 
 13. ### Jurisdiction and Venue
