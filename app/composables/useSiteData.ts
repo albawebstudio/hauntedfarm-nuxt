@@ -71,7 +71,7 @@ export function useSiteData() {
     ])
     const social_links = ref<SocialLink[]> ([
         {
-            component: "FacebookSvg",
+            component: "SvgoFacebook",
             label: "facebook",
             color: "filter-white",
             bg_color: "facebook",
@@ -80,7 +80,7 @@ export function useSiteData() {
             href: "https://www.facebook.com/hauntedfarmmn/"
         },
         {
-            component: "XSvg",
+            component: "SvgoX",
             label: "x",
             color: "filter-black",
             bg_color: "x",
@@ -89,7 +89,7 @@ export function useSiteData() {
             href: "https://x.com/hauntedfarmmn/"
         },
         {
-            component: "InstagramSvg",
+            component: "SvgoInstagram",
             label: "instagram",
             color: "filter-white",
             bg_color: "instagram",
@@ -98,7 +98,7 @@ export function useSiteData() {
             href: "https://instagram.com/hauntedfarmmn/"
         },
         {
-            component: "TiktokSvg",
+            component: "SvgoTiktok",
             label: "tiktok",
             color: "filter-white",
             bg_color: "tiktok",
@@ -107,7 +107,7 @@ export function useSiteData() {
             href: "https://www.tiktok.com/@haunted_farm?lang=en"
         },
         {
-            component: "YoutubeSvg",
+            component: "SvgoYoutube",
             label: "youtube",
             color: "filter-white",
             bg_color: "youtube",

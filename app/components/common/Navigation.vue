@@ -1,7 +1,6 @@
 <script setup lang="ts">
 import {ref, onMounted} from 'vue'
 import { useSiteData } from "~/composables/useSiteData";
-import LogoSrc from "/public/images/logo-navigation.svg";
 
 const { site } = useSiteData()
 
@@ -16,8 +15,7 @@ const toggleNav = () => (showMenu.value = !showMenu.value);
         <NuxtLink to="/#home"
             external
             class="flex items-center space-x-3 sm:space-x-8 rtl:space-x-reverse">
-          <LogoSrc :alt="site.title"
-                   :fontControlled="false"
+          <SvgoNavigationLogo :alt="site.title"
                    class="h-16"/>
           <span class="self-center text-3xl sm:text-4xl font-semibold whitespace-nowrap text-primary dark:text-orange-700 font-another-danger drop-shadow-dark-glow text-stroke-dark dark:drop-shadow-glow dark:text-stroke-light">{{ site.title }}</span>
         </NuxtLink>
