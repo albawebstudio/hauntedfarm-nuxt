@@ -80,6 +80,10 @@ export default defineNuxtConfig({
     id: 'G-61QKTVDLHP'
   },
 
+  svgo: {
+    defaultImport: 'component',
+  },
+
   security: {
     headers: {
       contentSecurityPolicy: {

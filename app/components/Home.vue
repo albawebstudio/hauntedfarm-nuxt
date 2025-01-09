@@ -38,10 +38,9 @@ const yrsHaunting = date.getFullYear() - site.value.established
             target="_blank">
           <div :class="social_link.bg_color" class="mx-auto flex h-16 w-16 -translate-y-12 transform items-center justify-center rounded-full shadow-lg">
               <client-only>
-                <FontAwesomeIcon :icon="social_link.icon"
-                                 :title="social_link.display_title"
-                                 :class="social_link.color"
-                                 class="text-2xl"/>
+                <component :is="social_link.component"
+                           :class="social_link.color"
+                           class="h-8"/>
               </client-only>
           </div>
         </NuxtLink>
