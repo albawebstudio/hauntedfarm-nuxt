@@ -55,7 +55,7 @@ export function useScheduleData() {
     });
     const offers = ref<Offers> ({
         '@type': 'Offer',
-        price: 22,
+        price: 25,
         priceCurrency: 'USD',
         availability: 'https://schema.org/InStock',
         validFrom: startDate,
@@ -126,7 +126,7 @@ export function useScheduleData() {
     const events = buildEvents();
     const schedule = ref<Schedule> ({
         title: 'dates and hours',
-        content: 'The Big Show runs Friday & Saturday starting September 27th through Halloween October 31st from 7-11 pm',
+        content: 'The Haunted Farm runs Friday & Saturday starting September 27th through Halloween October 31st from 7-11 pm',
         // events:  events.value,
         events: events,
         tagLines: tagLines,
