@@ -9,7 +9,7 @@ import type {
 export function useTicketData() {
     const admission = ref<Admission>({
         name: "General Admission",
-        price: 22,
+        price: 25,
         label: "Per Person",
         currency: "USD",
         terms: "We accept cash and most major credit cards"
