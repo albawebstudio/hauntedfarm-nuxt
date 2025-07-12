@@ -53,7 +53,7 @@ onMounted(() => {
             </client-only>
           </div>
           <div class="font-semibold text-gray-800 text-xl text-center lg:text-left px-2">
-            The Big Show
+            The Haunted Farm
           </div>
 
           <div class="text-gray-600 font-medium text-sm pt-1 text-center lg:text-left px-2">
