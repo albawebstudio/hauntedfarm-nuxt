@@ -1,0 +1,55 @@
+@font-face {
+    font-family: "American Frights";
+    src: url("/fonts/American Frights.woff2") format("woff2"),
+         url("/fonts/American Frights.woff") format("woff"),
+         url("/fonts/American Frights.ttf") format("truetype"),
+         url("/fonts/American Frights.otf") format("opentype");
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "American Frights";
+    src: url("/fonts/American Frights Italic.woff2") format("woff2"),
+         url("/fonts/American Frights Italic.woff") format("woff"),
+         url("/fonts/American Frights Italic.ttf") format("truetype"),
+         url("/fonts/American Frights Italic.otf") format("opentype");
+    font-weight: 400;
+    font-style: italic;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "Another Danger";
+    src: url("/fonts/Another Danger.ttf") format("truetype"),
+         url("/fonts/Another Danger.otf") format("opentype");
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "Another Danger";
+    src: url("/fonts/Another Danger Slanted.ttf") format("truetype"),
+         url("/fonts/Another Danger Slanted.otf") format("opentype");
+    font-weight: 400;
+    font-style: italic;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "Wolves Vs Monster";
+    src: url("/fonts/Wolves Vs Monster.otf") format("opentype");
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "Wolves Vs Monster";
+    src: url("/fonts/Wolves Vs Monster Slant.otf") format("opentype");
+    font-weight: 400;
+    font-style: italic;
+    font-display: swap;
+}
