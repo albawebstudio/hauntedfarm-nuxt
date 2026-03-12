@@ -112,6 +112,18 @@ The application is using AWS Amplify which has a hook to capture changes to the 
 
 ## Haunted Farm Assets
 
+### Colors
+
+| Color Name  | Hex Code                                                                                                 |
+|-------------|----------------------------------------------------------------------------------------------------------|
+| Thunderbird | <div style="display: inline-block; width: 16px; height: 16px; background-color: #d71818;"></div> #d71818 |
+| Timberwolf  | <div style="display: inline-block; width: 16px; height: 16px; background-color: #d2cfc9;"></div> #d2cfc9 |
+| Cod Gray    | <div style="display: inline-block; width: 16px; height: 16px; background-color: #060606;"></div> #060606 |
+| Japonica    | <div style="display: inline-block; width: 16px; height: 16px; background-color: #d27b58;"></div> #d27b58 |
+| Jape        | <div style="display: inline-block; width: 16px; height: 16px; background-color: #090909;"></div> #090909 |
+| Merlin      | <div style="display: inline-block; width: 16px; height: 16px; background-color: #434240;"></div> #434240 |
+| Tiktok      | <div style="display: inline-block; width: 16px; height: 16px; background-color: #00f2ea;"></div> #00f2ea |
+
 ### Fonts
 
 At the moment, we are looking to use the following fonts. 

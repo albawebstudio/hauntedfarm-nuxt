@@ -52,18 +52,18 @@ html {
     --color-light-900: var(--color-timberwolf-900);
     --color-light-950: var(--color-timberwolf-950);
 
-    --color-black: var(--color-merlin);
-    --color-black-50: var(--color-merlin-50);
-    --color-black-100: var(--color-merlin-100);
-    --color-black-200: var(--color-merlin-200);
-    --color-black-300: var(--color-merlin-300);
-    --color-black-400: var(--color-merlin-400);
-    --color-black-500: var(--color-merlin-500);
-    --color-black-600: var(--color-merlin-600);
-    --color-black-700: var(--color-merlin-700);
-    --color-black-800: var(--color-merlin-800);
-    --color-black-900: var(--color-merlin-900);
-    --color-black-950: var(--color-merlin-950);
+    --color-black: var(--color-jape);
+    --color-black-50: var(--color-jape-50);
+    --color-black-100: var(--color-jape-100);
+    --color-black-200: var(--color-jape-200);
+    --color-black-300: var(--color-jape-300);
+    --color-black-400: var(--color-jape-400);
+    --color-black-500: var(--color-jape-500);
+    --color-black-600: var(--color-jape-600);
+    --color-black-700: var(--color-jape-700);
+    --color-black-800: var(--color-jape-800);
+    --color-black-900: var(--color-jape-900);
+    --color-black-950: var(--color-jape-950);
 
     --color-orange: var(--color-japonica);
     --color-orange-50: var(--color-japonica-50);
@@ -91,52 +91,52 @@ html {
     --color-thunderbird-900: #841818;
     --color-thunderbird-950: #480707;
 
-    --color-timberwolf: #D2CFC9;
-    --color-timberwolf-50: #FFFFFF;
-    --color-timberwolf-100: #FFFFFF;
-    --color-timberwolf-200: #FFFFFF;
-    --color-timberwolf-300: #FFFFFF;
-    --color-timberwolf-400: #F7F7F6;
-    --color-timberwolf-500: #E5E3DF;
-    --color-timberwolf-600: #D2CFC9;
-    --color-timberwolf-700: #B9B4AA;
-    --color-timberwolf-800: #9F998C;
-    --color-timberwolf-900: #847D6E;
-    --color-timberwolf-950: #756F62;
+    --color-timberwolf: #d2cfc9;
+    --color-timberwolf-50: #ffffff;
+    --color-timberwolf-100: #ffffff;
+    --color-timberwolf-200: #ffffff;
+    --color-timberwolf-300: #ffffff;
+    --color-timberwolf-400: #f7f7f6;
+    --color-timberwolf-500: #e5e3df;
+    --color-timberwolf-600: #d2cfc9;
+    --color-timberwolf-700: #b9b4aa;
+    --color-timberwolf-800: #9f998c;
+    --color-timberwolf-900: #847d6e;
+    --color-timberwolf-950: #756f62;
 
     --color-cod-gray: #060606;
     --color-cod-gray-50: #767676;
-    --color-cod-gray-100: #6C6C6C;
+    --color-cod-gray-100: #6c6c6c;
     --color-cod-gray-200: #585858;
     --color-cod-gray-300: #434343;
-    --color-cod-gray-400: #2F2F2F;
-    --color-cod-gray-500: #1A1A1A;
+    --color-cod-gray-400: #2f2f2f;
+    --color-cod-gray-500: #1a1a1a;
     --color-cod-gray-600: #060606;
     --color-cod-gray-700: #000000;
     --color-cod-gray-800: #000000;
     --color-cod-gray-900: #000000;
     --color-cod-gray-950: #000000;
 
-    --color-japonica: #D27B58;
-    --color-japonica-50: #FFFFFF;
-    --color-japonica-100: #FDFAF9;
-    --color-japonica-200: #F5E1D9;
-    --color-japonica-300: #ECC7B8;
-    --color-japonica-400: #E3AE98;
-    --color-japonica-500: #DB9478;
-    --color-japonica-600: #D27B58;
-    --color-japonica-700: #BF5B33;
+    --color-japonica: #d27b58;
+    --color-japonica-50: #ffffff;
+    --color-japonica-100: #fdfaf9;
+    --color-japonica-200: #f5e1d9;
+    --color-japonica-300: #ecc7b8;
+    --color-japonica-400: #e3ae98;
+    --color-japonica-500: #db9478;
+    --color-japonica-600: #d27b58;
+    --color-japonica-700: #bf5b33;
     --color-japonica-800: #924627;
-    --color-japonica-900: #66311C;
+    --color-japonica-900: #66311c;
     --color-japonica-950: #502616;
 
     --color-jape: #090909;
     --color-jape-50: #797979;
-    --color-jape-100: #6F6F6F;
-    --color-jape-200: #5B5B5B;
+    --color-jape-100: #6f6f6f;
+    --color-jape-200: #5b5b5b;
     --color-jape-300: #464646;
     --color-jape-400: #323232;
-    --color-jape-500: #1D1D1D;
+    --color-jape-500: #1d1d1d;
     --color-jape-600: #090909;
     --color-jape-700: #000000;
     --color-jape-800: #000000;
@@ -144,30 +144,30 @@ html {
     --color-jape-950: #000000;
 
     --color-merlin: #434240;
-    --color-merlin-50: #B3B2B0;
-    --color-merlin-100: #AAA8A5;
+    --color-merlin-50: #b3b2b0;
+    --color-merlin-100: #aaa8a5;
     --color-merlin-200: #969491;
-    --color-merlin-300: #82807C;
-    --color-merlin-400: #6D6B68;
+    --color-merlin-300: #82807c;
+    --color-merlin-400: #6d6b68;
     --color-merlin-500: #585754;
     --color-merlin-600: #434240;
     --color-merlin-700: #262625;
-    --color-merlin-800: #0A0909;
+    --color-merlin-800: #0a0909;
     --color-merlin-900: #000000;
     --color-merlin-950: #000000;
 
-    --color-tiktok: #00F2EA;
-    --color-tiktok-50: #D3FFFE;
-    --color-tiktok-100: #BFFFFD;
-    --color-tiktok-200: #96FFFC;
-    --color-tiktok-300: #6DFFFA;
-    --color-tiktok-400: #45FFF9;
-    --color-tiktok-500: #1CFFF7;
-    --color-tiktok-600: #00F2EA;
-    --color-tiktok-700: #00BAB4;
-    --color-tiktok-800: #00827E;
-    --color-tiktok-900: #004A47;
-    --color-tiktok-950: #002E2C;
+    --color-tiktok: #00f2ea;
+    --color-tiktok-50: #d3fffe;
+    --color-tiktok-100: #bffffd;
+    --color-tiktok-200: #96fffc;
+    --color-tiktok-300: #6dfffa;
+    --color-tiktok-400: #45fff9;
+    --color-tiktok-500: #1cfff7;
+    --color-tiktok-600: #00f2ea;
+    --color-tiktok-700: #00bab4;
+    --color-tiktok-800: #00827e;
+    --color-tiktok-900: #004a47;
+    --color-tiktok-950: #002e2c;
 }
 
 .tracking-uber-wide {
@@ -176,10 +176,10 @@ html {
 
 .text-stroke-light {
     text-shadow:
-            -1px -1px 0 #ECC7B8,
-            1px -1px 0 #ECC7B8,
-            -1px 1px 0 #ECC7B8,
-            1px 1px 0 #ECC7B8;
+            -1px -1px 0 #ecc7b8,
+            1px -1px 0 #ecc7b8,
+            -1px 1px 0 #ecc7b8,
+            1px 1px 0 #ecc7b8;
 }
 .text-stroke-dark {
     text-shadow:

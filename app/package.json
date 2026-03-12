@@ -33,7 +33,6 @@
     "nuxt-gtag": "^4.1.0",
     "nuxt-security": "^2.5.1",
     "nuxt-svgo": "^4.2.6",
-    "rehype-external-links": "^3.0.0",
     "tailwindcss": "^4.2.1",
     "vue": "latest",
     "vue-recaptcha-v3": "^2.0.1",
