@@ -7,7 +7,7 @@ import { useContactData } from "~/composables/useContactData";
 import Spinner from "~/components/common/Spinner.vue";
 import Success from "~/components/common/Success.vue";
 import ContactForm from "~/components/common/ContactForm.vue";
-import LogoSvg from "/public/images/logo.svg";
+import LogoSvg from "~/assets/images/logo.svg";
 import useGoogleRecaptcha, {
   RecaptchaAction,
 } from "~/composables/useGoogleRecaptcha"

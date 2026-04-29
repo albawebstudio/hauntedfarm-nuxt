@@ -6,7 +6,7 @@ export default defineNuxtConfig({
       viewport: 'width=device-width, initial-scale=1',
     }
   },
-  compatibilityDate: '2024-04-03',
+  compatibilityDate: '2026-03-09',
   devtools: { enabled: true },
 
   colorMode: {
@@ -14,40 +14,31 @@ export default defineNuxtConfig({
     classSuffix: "",
   },
 
-  postcss: {
-    plugins: {
-      tailwindcss: {},
-      autoprefixer: {},
-    },
-  },
-
   css: [
-    '/assets/css/tailwind.css',
-    '@fortawesome/fontawesome-svg-core/styles.css',
+    '@/assets/css/main.css',
+    /*'@fortawesome/fontawesome-svg-core/styles.css'*/
   ],
 
+  ui: {
+    theme: {
+      colors: ['thunderbird', 'timberwolf', 'cod-gray', 'japonica', 'jape','merlin','tiktok'],
+    }
+  },
+
   modules: [
-    "@nuxtjs/google-fonts",
-    "@nuxt/image",
     "@nuxt/content",
-    "@nuxtjs/color-mode",
+    "@nuxt/ui",
+    "@nuxt/image",
     "nuxt-svgo",
     'nuxt-security',
     'nuxt-gtag',
-    'nuxt-lodash',
-    '@pinia/nuxt',
   ],
 
   plugins: [
     '~/plugins/vue3-google-map',
     '~/plugins/recaptcha',
+    '~/plugins/fontawesome',
   ],
-
-  build: {
-    transpile: [
-      '@fortawesome/vue-fontawesome'
-    ]
-  },
 
   runtimeConfig: {
     recaptchaSecretKey: process.env.RECAPTCHA_SECRET_KEY,
@@ -58,22 +49,6 @@ export default defineNuxtConfig({
       googleMapsApiKey: process.env.GOOGLE_MAPS_API_KEY,
       recaptchaSiteKey: process.env.RECAPTCHA_SITE_KEY,
     }
-  },
-
-  googleFonts: {
-    families: {
-      Oswald: {
-        wght: [300, 500, 700, 800]
-      },
-      'Libre Baskerville': true,
-      Lato: [100, 300],
-      Raleway: {
-        wght: [100, 300, 500, 700, 900],
-        ital: [100, 300, 500, 700, 900],
-      },
-    },
-    display: 'swap',
-    preload: true
   },
 
   gtag: {
@@ -92,22 +67,11 @@ export default defineNuxtConfig({
           "'self'",
           "'unsafe-eval'",  // Required for the QR code library
           'https:',
-          "'unsafe-inline'"
+          "'unsafe-inline'",
+          "https://maps.googleapis.com/"
         ],
       }
     },
-  },
-
-  content: {
-    markdown: {
-      toc: {
-        depth: 3,
-        searchDepth: 3
-      },
-      rehypePlugins: [
-        'rehype-external-links'
-      ]
-    }
   },
 
   vue: {

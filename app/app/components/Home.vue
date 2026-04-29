@@ -1,7 +1,6 @@
 <script setup lang="ts">
 import { useSiteData } from "~/composables/useSiteData"
 import { useHomeData } from "~/composables/useHomeData"
-import { FontAwesomeIcon } from "@fortawesome/vue-fontawesome"
 const { site } = useSiteData()
 const { home } = useHomeData()
 

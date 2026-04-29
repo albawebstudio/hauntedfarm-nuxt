@@ -1,0 +1,235 @@
+@import './fonts.css';
+@import "tailwindcss";
+@import "@nuxt/ui";
+
+html {
+    scroll-behavior: smooth;
+}
+
+@theme {
+    --font-american-frights: "American Frights", sans-serif;
+    --font-another-danger: "Another Danger", sans-serif;
+    --font-wolves-vs-monster: "Wolves Vs Monster", sans-serif;
+    --font-sans: "Raleway", "Inter", sans-serif;
+    --font-oswald: "Oswald", sans-serif;
+
+    --color-primary: var(--color-thunderbird);
+    --color-primary-50: var(--color-thunderbird-50);
+    --color-primary-100: var(--color-thunderbird-100);
+    --color-primary-200: var(--color-thunderbird-200);
+    --color-primary-300: var(--color-thunderbird-300);
+    --color-primary-400: var(--color-thunderbird-400);
+    --color-primary-500: var(--color-thunderbird-500);
+    --color-primary-600: var(--color-thunderbird-600);
+    --color-primary-700: var(--color-thunderbird-700);
+    --color-primary-800: var(--color-thunderbird-800);
+    --color-primary-900: var(--color-thunderbird-900);
+    --color-primary-950: var(--color-thunderbird-950);
+
+    --color-secondary: var(--color-timberwolf);
+    --color-secondary-50: var(--color-timberwolf-50);
+    --color-secondary-100: var(--color-timberwolf-100);
+    --color-secondary-200: var(--color-timberwolf-200);
+    --color-secondary-300: var(--color-timberwolf-300);
+    --color-secondary-400: var(--color-timberwolf-400);
+    --color-secondary-500: var(--color-timberwolf-500);
+    --color-secondary-600: var(--color-timberwolf-600);
+    --color-secondary-700: var(--color-timberwolf-700);
+    --color-secondary-800: var(--color-timberwolf-800);
+    --color-secondary-900: var(--color-timberwolf-900);
+    --color-secondary-950: var(--color-timberwolf-950);
+
+    --color-light: var(--color-timberwolf);
+    --color-light-50: var(--color-timberwolf-50);
+    --color-light-100: var(--color-timberwolf-100);
+    --color-light-200: var(--color-timberwolf-200);
+    --color-light-300: var(--color-timberwolf-300);
+    --color-light-400: var(--color-timberwolf-400);
+    --color-light-500: var(--color-timberwolf-500);
+    --color-light-600: var(--color-timberwolf-600);
+    --color-light-700: var(--color-timberwolf-700);
+    --color-light-800: var(--color-timberwolf-800);
+    --color-light-900: var(--color-timberwolf-900);
+    --color-light-950: var(--color-timberwolf-950);
+
+    --color-black: var(--color-jape);
+    --color-black-50: var(--color-jape-50);
+    --color-black-100: var(--color-jape-100);
+    --color-black-200: var(--color-jape-200);
+    --color-black-300: var(--color-jape-300);
+    --color-black-400: var(--color-jape-400);
+    --color-black-500: var(--color-jape-500);
+    --color-black-600: var(--color-jape-600);
+    --color-black-700: var(--color-jape-700);
+    --color-black-800: var(--color-jape-800);
+    --color-black-900: var(--color-jape-900);
+    --color-black-950: var(--color-jape-950);
+
+    --color-orange: var(--color-japonica);
+    --color-orange-50: var(--color-japonica-50);
+    --color-orange-100: var(--color-japonica-100);
+    --color-orange-200: var(--color-japonica-200);
+    --color-orange-300: var(--color-japonica-300);
+    --color-orange-400: var(--color-japonica-400);
+    --color-orange-500: var(--color-japonica-500);
+    --color-orange-600: var(--color-japonica-600);
+    --color-orange-700: var(--color-japonica-700);
+    --color-orange-800: var(--color-japonica-800);
+    --color-orange-900: var(--color-japonica-900);
+    --color-orange-950: var(--color-japonica-950);
+
+    --color-thunderbird: #d71818;
+    --color-thunderbird-50: #fff1f1;
+    --color-thunderbird-100: #ffe1e1;
+    --color-thunderbird-200: #ffc7c7;
+    --color-thunderbird-300: #ffa0a0;
+    --color-thunderbird-400: #ff6a6a;
+    --color-thunderbird-500: #f83b3b;
+    --color-thunderbird-600: #d71818;
+    --color-thunderbird-700: #c11414;
+    --color-thunderbird-800: #a01414;
+    --color-thunderbird-900: #841818;
+    --color-thunderbird-950: #480707;
+
+    --color-timberwolf: #d2cfc9;
+    --color-timberwolf-50: #ffffff;
+    --color-timberwolf-100: #ffffff;
+    --color-timberwolf-200: #ffffff;
+    --color-timberwolf-300: #ffffff;
+    --color-timberwolf-400: #f7f7f6;
+    --color-timberwolf-500: #e5e3df;
+    --color-timberwolf-600: #d2cfc9;
+    --color-timberwolf-700: #b9b4aa;
+    --color-timberwolf-800: #9f998c;
+    --color-timberwolf-900: #847d6e;
+    --color-timberwolf-950: #756f62;
+
+    --color-cod-gray: #060606;
+    --color-cod-gray-50: #767676;
+    --color-cod-gray-100: #6c6c6c;
+    --color-cod-gray-200: #585858;
+    --color-cod-gray-300: #434343;
+    --color-cod-gray-400: #2f2f2f;
+    --color-cod-gray-500: #1a1a1a;
+    --color-cod-gray-600: #060606;
+    --color-cod-gray-700: #000000;
+    --color-cod-gray-800: #000000;
+    --color-cod-gray-900: #000000;
+    --color-cod-gray-950: #000000;
+
+    --color-japonica: #d27b58;
+    --color-japonica-50: #ffffff;
+    --color-japonica-100: #fdfaf9;
+    --color-japonica-200: #f5e1d9;
+    --color-japonica-300: #ecc7b8;
+    --color-japonica-400: #e3ae98;
+    --color-japonica-500: #db9478;
+    --color-japonica-600: #d27b58;
+    --color-japonica-700: #bf5b33;
+    --color-japonica-800: #924627;
+    --color-japonica-900: #66311c;
+    --color-japonica-950: #502616;
+
+    --color-jape: #090909;
+    --color-jape-50: #797979;
+    --color-jape-100: #6f6f6f;
+    --color-jape-200: #5b5b5b;
+    --color-jape-300: #464646;
+    --color-jape-400: #323232;
+    --color-jape-500: #1d1d1d;
+    --color-jape-600: #090909;
+    --color-jape-700: #000000;
+    --color-jape-800: #000000;
+    --color-jape-900: #000000;
+    --color-jape-950: #000000;
+
+    --color-merlin: #434240;
+    --color-merlin-50: #b3b2b0;
+    --color-merlin-100: #aaa8a5;
+    --color-merlin-200: #969491;
+    --color-merlin-300: #82807c;
+    --color-merlin-400: #6d6b68;
+    --color-merlin-500: #585754;
+    --color-merlin-600: #434240;
+    --color-merlin-700: #262625;
+    --color-merlin-800: #0a0909;
+    --color-merlin-900: #000000;
+    --color-merlin-950: #000000;
+
+    --color-tiktok: #00f2ea;
+    --color-tiktok-50: #d3fffe;
+    --color-tiktok-100: #bffffd;
+    --color-tiktok-200: #96fffc;
+    --color-tiktok-300: #6dfffa;
+    --color-tiktok-400: #45fff9;
+    --color-tiktok-500: #1cfff7;
+    --color-tiktok-600: #00f2ea;
+    --color-tiktok-700: #00bab4;
+    --color-tiktok-800: #00827e;
+    --color-tiktok-900: #004a47;
+    --color-tiktok-950: #002e2c;
+}
+
+.tracking-uber-wide {
+    letter-spacing: 1rem;
+}
+
+.text-stroke-light {
+    text-shadow:
+            -1px -1px 0 #ecc7b8,
+            1px -1px 0 #ecc7b8,
+            -1px 1px 0 #ecc7b8,
+            1px 1px 0 #ecc7b8;
+}
+.text-stroke-dark {
+    text-shadow:
+            -1px -1px 0 #000,
+            1px -1px 0 #000,
+            -1px 1px 0 #000,
+            1px 1px 0 #000;
+}
+
+.pricing-box {
+    margin: 0.75rem;
+    text-align: center;
+    padding: 1.5rem 1.5rem 2.5rem;
+    box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
+    border-radius: 1rem;
+    transition-duration: 300ms;
+}
+
+.package-name {
+    --text-opacity: 1;
+    font-weight: 700;
+    text-transform: uppercase;
+    font-size: 0.875rem;
+}
+
+.filter-white {
+    filter: invert(100%) sepia(0%) saturate(0%) hue-rotate(129deg) brightness(110%) contrast(101%);
+}
+
+.filter-black {
+    filter: invert(0%) sepia(100%) saturate(7500%) hue-rotate(342deg) brightness(105%) contrast(109%);
+}
+
+.facebook {
+    background-color: #1877F2;
+    --tw-shadow-color: rgb(11, 93, 199, 0.4);
+}
+.x {
+    background-color: #ffffff;
+    --tw-shadow-color: rgb(243, 244, 246, 0.4);
+}
+.instagram {
+    background-color: #e1306c;
+    --tw-shadow-color: rgb(189, 27, 82, 0.4);
+}
+.tiktok {
+    background-color: #00f2ea;
+    --tw-shadow-color: rgb(0, 186, 180, 0.4);
+}
+.youtube {
+    background-color: #ff0000;
+    --tw-shadow-color: rgb(220, 38, 38, 0.4);
+}

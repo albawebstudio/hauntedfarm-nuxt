@@ -98,7 +98,7 @@ export function useScheduleData() {
                     '@context': 'https://schema.org',
                     '@type': 'Event',
                     name: `Haunted Farm ${eventDate.toDateString()}`,
-                    tagLine: tagLines[fetchRandomIdx()!],
+                    tagLine: tagLines[fetchRandomIdx()!] || '',
                     description: `Thirty years of haunting, come join us for the ${eventDate.getFullYear()} season at The Haunted Farm`,
                     location: location.value,
                     offers: offers.value,

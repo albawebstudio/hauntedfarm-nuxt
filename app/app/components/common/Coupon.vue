@@ -2,7 +2,7 @@
 import { onMounted, ref } from 'vue'
 import QRCode from "~/components/common/QRCode.vue";
 
-import {format} from "date-fns";
+import { format } from "date-fns";
 
 const emit = defineEmits<{
   (e: 'cancel'): void
@@ -12,9 +12,11 @@ const emit = defineEmits<{
 const qrCodeRef = ref<HTMLElement | null>(null)
 
 const config = useRuntimeConfig()
+console.log(`public`, config.public)
 const endDate = config.public.endDate
 
-const formatDate = (dateStr: string): string => {
+const formatDate = (dateStr?: string): string => {
+  if (!dateStr) { return '' }
   return format(new Date(dateStr), "MMMM do, yyyy"); // "do" adds the ordinal suffix automatically
 };
 const cancelModal = () => {

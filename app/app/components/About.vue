@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { useAboutData } from "~/composables/useAboutData";
+import { useAboutData } from "~/composables/useAboutData"
 import {FontAwesomeIcon} from "@fortawesome/vue-fontawesome";
 
 const { about } = useAboutData();
@@ -17,7 +17,7 @@ const { about } = useAboutData();
       <div v-for="item in about.items" class="rounded-xl bg-white p-6 pb-8 text-center shadow-xl mb-8">
         <div
             class="mx-auto flex h-16 w-16 -translate-y-12 transform items-center justify-center rounded-full bg-primary-600 shadow-lg shadow-primary-700/40">
-          <font-awesome-icon :icon="item.icon" class="text-secondary leading-10" />
+          <font-awesome-icon :icon="item.icon" class="text-secondary leading-10 h-8 w-8" />
         </div>
         <h3 class="font-wolves-vs-monster text-darken mb-3 text-xl font-bold uppercase lg:px-14">{{ item.title }}</h3>
         <p class="px-4 text-gray-500 tracking-tight">{{ item.content }}</p>

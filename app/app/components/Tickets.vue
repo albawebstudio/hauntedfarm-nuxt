@@ -2,7 +2,7 @@
 import { shallowRef } from "vue";
 import { useTicketData } from "~/composables/useTicketData";
 import { FontAwesomeIcon } from "@fortawesome/vue-fontawesome";
-import LogoSvg from "/public/images/logo.svg";
+import LogoSvg from "~/assets/images/logo.svg";
 import BaseModal from "~/components/common/BaseModal.vue";
 import Coupon from "~/components/common/Coupon.vue";
 import { format } from 'date-fns';
@@ -60,7 +60,7 @@ const cancelModal = () => {
                 <span class="font-american-frights text-orange-600 text-5xl font-bold tracking-tight">{{ formatCurrency(pass.admission.price) }}</span>
                 <span class="text-sm font-semibold leading-6 tracking-wide text-gray-300">{{ pass.admission.currency }}</span>
               </p>
-              <NuxtLink @click="showModal = true" class="mt-10 block w-full rounded-md bg-primary-600 px-3 py-2 text-center text-sm font-semibold text-white shadow-sm hover:bg-primary-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary-600"><font-awesome-icon icon="fas fa-ticket"/> {{ ticket.cta.label }}</NuxtLink>
+              <NuxtLink @click="showModal = true" class="mt-10 block w-full rounded-md bg-primary-600 px-3 py-2 text-center text-sm font-semibold text-white shadow-sm hover:bg-primary-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary-600 flex items-center justify-center"><font-awesome-icon icon="fas fa-ticket" class="h-8 w-8" /> <span class="ms-2">{{ ticket.cta.label }}</span></NuxtLink>
               <p class="mt-6 text-xs leading-5 text-gray-200">{{ pass.admission.terms }}</p>
             </div>
           </div>

@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { onMounted, computed } from 'vue'
 import * as qr from '@bitjson/qr-code'
-import LogoSvg from "/public/images/logo.svg";
+import LogoSvg from "~/assets/images/logo.svg";
 
 interface Props {
   contents: string
