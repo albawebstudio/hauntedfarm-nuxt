@@ -28,9 +28,7 @@ export default defineNuxtConfig({
   modules: [
     "@nuxt/content",
     "@nuxt/ui",
-    "@nuxtjs/google-fonts",
     "@nuxt/image",
-    "@nuxtjs/color-mode",
     "nuxt-svgo",
     'nuxt-security',
     'nuxt-gtag',
@@ -51,23 +49,6 @@ export default defineNuxtConfig({
       googleMapsApiKey: process.env.GOOGLE_MAPS_API_KEY,
       recaptchaSiteKey: process.env.RECAPTCHA_SITE_KEY,
     }
-  },
-
-  googleFonts: {
-    families: {
-      Oswald: {
-        wght: [300, 500, 700, 800]
-      },
-      'Libre Baskerville': true,
-      Lato: [100, 300],
-      Raleway: {
-        wght: [100, 300, 500, 700, 900],
-        ital: [100, 300, 500, 700, 900],
-      },
-      Roboto: [100, 300, 400, 500, 700, 900],
-    },
-    display: 'swap',
-    preload: true
   },
 
   gtag: {

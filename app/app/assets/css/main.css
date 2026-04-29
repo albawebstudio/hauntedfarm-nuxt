@@ -1,6 +1,6 @@
+@import './fonts.css';
 @import "tailwindcss";
 @import "@nuxt/ui";
-@import './fonts.css';
 
 html {
     scroll-behavior: smooth;
