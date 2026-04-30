@@ -170,6 +170,18 @@ html {
     --color-tiktok-950: #002e2c;
 }
 
+@utility drop-shadow-glow {
+    filter: drop-shadow(0 0px 10px rgba(255, 255, 255, 0.35)) drop-shadow(0 0px 10px rgba(255, 255, 255, 0.2));
+}
+
+@utility drop-shadow-red-glow {
+    filter: drop-shadow(0 0px 10px rgba(248, 59, 59, 0.45)) drop-shadow(0 0px 10px rgba(248, 59, 59, 0.1));
+}
+
+@utility drop-shadow-dark-glow {
+    filter: drop-shadow(0 0px 10px rgba(19, 19, 19, 0.66)) drop-shadow(0 0px 10px rgba(19, 19, 19, 0.5));
+}
+
 .tracking-uber-wide {
     letter-spacing: 1rem;
 }
@@ -215,21 +227,21 @@ html {
 
 .facebook {
     background-color: #1877F2;
-    --tw-shadow-color: rgb(11, 93, 199, 0.4);
+    --tw-shadow-color: rgb(243, 244, 246, 0.4);
 }
 .x {
-    background-color: #ffffff;
+    background-color: #222222;
     --tw-shadow-color: rgb(243, 244, 246, 0.4);
 }
 .instagram {
     background-color: #e1306c;
-    --tw-shadow-color: rgb(189, 27, 82, 0.4);
+    --tw-shadow-color: rgb(243, 244, 246, 0.4);
 }
 .tiktok {
     background-color: #00f2ea;
-    --tw-shadow-color: rgb(0, 186, 180, 0.4);
+    --tw-shadow-color: rgb(243, 244, 246, 0.4);
 }
 .youtube {
     background-color: #ff0000;
-    --tw-shadow-color: rgb(220, 38, 38, 0.4);
+    --tw-shadow-color: rgb(243, 244, 246, 0.4);
 }

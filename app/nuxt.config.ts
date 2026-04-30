@@ -9,11 +9,6 @@ export default defineNuxtConfig({
   compatibilityDate: '2026-03-09',
   devtools: { enabled: true },
 
-  colorMode: {
-    fallback: 'dark',
-    classSuffix: "",
-  },
-
   css: [
     '@/assets/css/main.css',
     /*'@fortawesome/fontawesome-svg-core/styles.css'*/
@@ -39,6 +34,14 @@ export default defineNuxtConfig({
     '~/plugins/recaptcha',
     '~/plugins/fontawesome',
   ],
+
+  content: {
+    database: {
+      type: 'd1',
+      binding: 'DB',
+      bindingName: 'DB'
+    },
+  },
 
   runtimeConfig: {
     recaptchaSecretKey: process.env.RECAPTCHA_SECRET_KEY,
@@ -78,6 +81,16 @@ export default defineNuxtConfig({
     compilerOptions: {
       isCustomElement: (tag) => ['qr-code'].includes(tag)
     }
+  },
+
+  nitro: {
+    preset: 'cloudflare_pages',
+  },
+
+  vite: {
+    build: {
+      sourcemap: false,
+    },
   },
 
 })

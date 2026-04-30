@@ -19,7 +19,7 @@ const { about } = useAboutData();
             class="mx-auto flex h-16 w-16 -translate-y-12 transform items-center justify-center rounded-full bg-primary-600 shadow-lg shadow-primary-700/40">
           <font-awesome-icon :icon="item.icon" class="text-secondary leading-10 h-8 w-8" />
         </div>
-        <h3 class="font-wolves-vs-monster text-darken mb-3 text-xl font-bold uppercase lg:px-14">{{ item.title }}</h3>
+        <h3 class="font-wolves-vs-monster text-gray-900 mb-3 text-xl font-bold uppercase lg:px-14">{{ item.title }}</h3>
         <p class="px-4 text-gray-500 tracking-tight">{{ item.content }}</p>
       </div>
     </div>
