@@ -1,6 +1,7 @@
 # Custom
 # exclude everything
 dist/*
+.wrangler
 
 # exception to the rule
 !dist/.gitkeep
