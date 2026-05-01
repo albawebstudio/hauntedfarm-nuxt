@@ -25,11 +25,21 @@ type CloudflareEnv = {
   CONTACT_FORM_FROM_EMAIL?: string
   NUXT_CONTACT_FORM_TO_EMAIL?: string
   NUXT_CONTACT_FORM_FROM_EMAIL?: string
+  NITRO_CONTACT_FORM_TO_EMAIL?: string
+  NITRO_CONTACT_FORM_FROM_EMAIL?: string
+}
+
+function envFromNodeUnenv(event: H3Event): CloudflareEnv | undefined {
+  const req = event.node?.req as
+    | { __unenv__?: { _platform?: { cloudflare?: { env?: CloudflareEnv } } } }
+    | undefined
+  return req?.__unenv__?._platform?.cloudflare?.env
 }
 
 function workerEnvLayers(event: H3Event): CloudflareEnv[] {
   const layers: (CloudflareEnv | undefined)[] = [
     event.context.cloudflare?.env as CloudflareEnv | undefined,
+    envFromNodeUnenv(event),
     (globalThis as typeof globalThis & { __env__?: CloudflareEnv }).__env__,
     cloudflareWorkerEnv as unknown as CloudflareEnv,
   ]
@@ -73,13 +83,25 @@ function resolveContactAddresses(
 ): { to: string; from: string } {
   const to = firstNonEmptyString(
     runtimeConfig.contactFormToEmail,
-    readEnvString(event, 'CONTACT_FORM_TO_EMAIL', 'NUXT_CONTACT_FORM_TO_EMAIL'),
+    readEnvString(
+      event,
+      'CONTACT_FORM_TO_EMAIL',
+      'NUXT_CONTACT_FORM_TO_EMAIL',
+      'NITRO_CONTACT_FORM_TO_EMAIL',
+    ),
+    typeof process !== 'undefined' ? process.env.NITRO_CONTACT_FORM_TO_EMAIL : undefined,
     typeof process !== 'undefined' ? process.env.CONTACT_FORM_TO_EMAIL : undefined,
     typeof process !== 'undefined' ? process.env.NUXT_CONTACT_FORM_TO_EMAIL : undefined,
   )
   const from = firstNonEmptyString(
     runtimeConfig.contactFormFromEmail,
-    readEnvString(event, 'CONTACT_FORM_FROM_EMAIL', 'NUXT_CONTACT_FORM_FROM_EMAIL'),
+    readEnvString(
+      event,
+      'CONTACT_FORM_FROM_EMAIL',
+      'NUXT_CONTACT_FORM_FROM_EMAIL',
+      'NITRO_CONTACT_FORM_FROM_EMAIL',
+    ),
+    typeof process !== 'undefined' ? process.env.NITRO_CONTACT_FORM_FROM_EMAIL : undefined,
     typeof process !== 'undefined' ? process.env.CONTACT_FORM_FROM_EMAIL : undefined,
     typeof process !== 'undefined' ? process.env.NUXT_CONTACT_FORM_FROM_EMAIL : undefined,
   )
@@ -170,13 +192,13 @@ function buildHtml(p: ContactPayload): string {
 }
 
 export default defineEventHandler(async (event) => {
-  const runtimeConfig = useRuntimeConfig()
+  const runtimeConfig = useRuntimeConfig(event)
   const { to, from } = resolveContactAddresses(event, runtimeConfig)
 
   if (!to || !from) {
     console.error(
-      '[contact-form] Missing CONTACT_FORM_TO_EMAIL / CONTACT_FORM_FROM_EMAIL. '
-        + 'For preview URLs (*.pages.dev), set these under Pages → Settings → Environment variables → Preview (not only Production).',
+      '[contact-form] Missing to/from addresses. Pass the H3 event into useRuntimeConfig() so Nitro can read process.env (backed by globalThis.__env__ on Cloudflare). '
+        + 'Set CONTACT_FORM_TO_EMAIL and CONTACT_FORM_FROM_EMAIL for Preview and Production, or use Nitro names NITRO_CONTACT_FORM_TO_EMAIL / NITRO_CONTACT_FORM_FROM_EMAIL.',
     )
     throw createError({
       statusCode: 503,
