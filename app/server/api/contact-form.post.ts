@@ -1,4 +1,5 @@
 import type { H3Event } from 'h3'
+import { env as cloudflareWorkerEnv } from 'cloudflare:workers'
 
 interface ContactPayload {
   name: string
@@ -22,23 +23,66 @@ type CloudflareEnv = {
   CONTACT_FORM_EMAIL?: CloudflareSendEmail
   CONTACT_FORM_TO_EMAIL?: string
   CONTACT_FORM_FROM_EMAIL?: string
+  NUXT_CONTACT_FORM_TO_EMAIL?: string
+  NUXT_CONTACT_FORM_FROM_EMAIL?: string
+}
+
+function workerEnvLayers(event: H3Event): CloudflareEnv[] {
+  const layers: (CloudflareEnv | undefined)[] = [
+    event.context.cloudflare?.env as CloudflareEnv | undefined,
+    (globalThis as typeof globalThis & { __env__?: CloudflareEnv }).__env__,
+    cloudflareWorkerEnv as unknown as CloudflareEnv,
+  ]
+  return layers.filter((x): x is CloudflareEnv => x != null && typeof x === 'object')
+}
+
+function readEnvString(event: H3Event, ...keys: (keyof CloudflareEnv)[]): string {
+  for (const key of keys) {
+    for (const layer of workerEnvLayers(event)) {
+      const v = layer[key]
+      if (typeof v === 'string' && v.trim()) {
+        return v.trim()
+      }
+    }
+  }
+  return ''
+}
+
+function resolveSendEmailBinding(event: H3Event): CloudflareSendEmail | undefined {
+  for (const layer of workerEnvLayers(event)) {
+    const b = layer.CONTACT_FORM_EMAIL
+    if (b && typeof b.send === 'function') {
+      return b
+    }
+  }
+  return undefined
+}
+
+function firstNonEmptyString(...candidates: unknown[]): string {
+  for (const c of candidates) {
+    if (typeof c === 'string' && c.trim()) {
+      return c.trim()
+    }
+  }
+  return ''
 }
 
 function resolveContactAddresses(
   event: H3Event,
   runtimeConfig: ReturnType<typeof useRuntimeConfig>,
 ): { to: string; from: string } {
-  const cf = event.context.cloudflare?.env as CloudflareEnv | undefined
-  const toFromConfig = runtimeConfig.contactFormToEmail
-  const fromFromConfig = runtimeConfig.contactFormFromEmail
-  const to =
-    (typeof toFromConfig === 'string' && toFromConfig) ||
-    (typeof cf?.CONTACT_FORM_TO_EMAIL === 'string' && cf.CONTACT_FORM_TO_EMAIL) ||
-    ''
-  const from =
-    (typeof fromFromConfig === 'string' && fromFromConfig) ||
-    (typeof cf?.CONTACT_FORM_FROM_EMAIL === 'string' && cf.CONTACT_FORM_FROM_EMAIL) ||
-    ''
+  const to = firstNonEmptyString(
+    runtimeConfig.contactFormToEmail,
+    readEnvString(event, 'CONTACT_FORM_TO_EMAIL', 'NUXT_CONTACT_FORM_TO_EMAIL'),
+    typeof process !== 'undefined' ? process.env.CONTACT_FORM_TO_EMAIL : undefined,
+    typeof process !== 'undefined' ? process.env.NUXT_CONTACT_FORM_TO_EMAIL : undefined,
+  )
+  const from = firstNonEmptyString(
+    runtimeConfig.contactFormFromEmail,
+    readEnvString(event, 'CONTACT_FORM_FROM_EMAIL', 'NUXT_CONTACT_FORM_FROM_EMAIL'),
+    typeof process !== 'undefined' ? process.env.CONTACT_FORM_FROM_EMAIL : undefined,
+    typeof process !== 'undefined' ? process.env.NUXT_CONTACT_FORM_FROM_EMAIL : undefined,
+  )
   return { to, from }
 }
 
@@ -130,6 +174,10 @@ export default defineEventHandler(async (event) => {
   const { to, from } = resolveContactAddresses(event, runtimeConfig)
 
   if (!to || !from) {
+    console.error(
+      '[contact-form] Missing CONTACT_FORM_TO_EMAIL / CONTACT_FORM_FROM_EMAIL. '
+        + 'For preview URLs (*.pages.dev), set these under Pages → Settings → Environment variables → Preview (not only Production).',
+    )
     throw createError({
       statusCode: 503,
       statusMessage: 'Contact form email is not configured',
@@ -142,8 +190,7 @@ export default defineEventHandler(async (event) => {
     throw createError({ statusCode: 400, statusMessage: 'Invalid form data' })
   }
 
-  const cloudflare = event.context.cloudflare as { env?: CloudflareEnv } | undefined
-  const binding = cloudflare?.env?.CONTACT_FORM_EMAIL
+  const binding = resolveSendEmailBinding(event)
 
   if (!binding) {
     throw createError({
