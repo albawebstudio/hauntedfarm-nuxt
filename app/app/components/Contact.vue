@@ -12,6 +12,7 @@ import useGoogleRecaptcha, {
   RecaptchaAction,
 } from "~/composables/useGoogleRecaptcha"
 import type { GoogleRecaptchaResponse } from "~/models/types/google-recaptcha-response"
+import type { ContactFormResponse } from "~/models/types/contact-form-response"
 
 const { executeRecaptcha } = useGoogleRecaptcha();
 const config = useRuntimeConfig()
@@ -60,7 +61,7 @@ const isFormValid = computed(() => {
 const submitForm = async () => {
   showSpinner.value = true
   // validate
-  if (!isFormValid) {
+  if (!isFormValid.value) {
     showSpinner.value = false
     return;
   }
@@ -77,11 +78,17 @@ const submitForm = async () => {
       throw new Error('reCAPTCHA verification failed');
     }
 
-    const response = await fetch(`${apiUrl}/contact-form`, {
+    const response = await useApi<ContactFormResponse>('/api/contact-form', {
       method: "POST",
-      body: JSON.stringify(form.value),
-    } )
-    if (!response.ok) {
+      body: {
+        name: form.value.name,
+        subject: form.value.subject,
+        email: form.value.email,
+        message: form.value.message,
+      },
+    })
+
+    if (!response.success) {
       throw new Error('Failed to submit form');
     }
     resetForm()
