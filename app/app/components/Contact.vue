@@ -4,6 +4,7 @@ import { GoogleMap, CustomMarker, InfoWindow } from "vue3-google-map";
 import { useGoogleMapData } from "~/composables/useGoogleMapData"
 import { useSiteData } from "~/composables/useSiteData"
 import { useContactData } from "~/composables/useContactData";
+import { differenceInSeconds } from "date-fns"
 import Spinner from "~/components/common/Spinner.vue";
 import Success from "~/components/common/Success.vue";
 import ContactForm from "~/components/common/ContactForm.vue";
@@ -17,7 +18,6 @@ import type { ContactFormResponse } from "~/models/types/contact-form-response"
 const { executeRecaptcha } = useGoogleRecaptcha();
 const config = useRuntimeConfig()
 const apiKey = config.public.googleMapsApiKey
-const apiUrl = config.public.apiUrl
 
 const {
   mapOptions,
@@ -31,7 +31,9 @@ interface FormData {
   name: string,
   subject: string,
   email: string,
+  phone: string,
   message: string,
+  form_time: Date | string,
 }
 
 const showSpinner = shallowRef(false);
@@ -42,7 +44,9 @@ const getInitialFormData = (): FormData => ({
   name: "",
   subject: "",
   email: "",
+  phone: "",
   message: "",
+  form_time: new Date(),
 });
 
 const form = ref<FormData>(getInitialFormData());
@@ -66,31 +70,22 @@ const submitForm = async () => {
     return;
   }
   try{
-    const { token } = await executeRecaptcha(RecaptchaAction.login);
-    const verificationResponse = await useApi<GoogleRecaptchaResponse>('/api/recaptcha', {
-      method: 'POST',
-      body: {
-        token
+    const formData = form.value
+    const submissionDT = new Date()
+    const isOutsideThreshold = differenceInSeconds(submissionDT, formData.form_time) > 5
+
+    if (formData.phone === '' && isOutsideThreshold) {
+      const { phone, form_time, ...contactForm } = formData
+      const response = await useApi<ContactFormResponse>('/api/contact-form', {
+        method: "POST",
+        body: contactForm,
+      })
+
+      if (!response.success) {
+        throw new Error('Failed to submit form');
       }
-    })
-
-    if (!verificationResponse.success) {
-      throw new Error('reCAPTCHA verification failed');
     }
 
-    const response = await useApi<ContactFormResponse>('/api/contact-form', {
-      method: "POST",
-      body: {
-        name: form.value.name,
-        subject: form.value.subject,
-        email: form.value.email,
-        message: form.value.message,
-      },
-    })
-
-    if (!response.success) {
-      throw new Error('Failed to submit form');
-    }
     resetForm()
     showSpinner.value = false
     showSuccess.value = true
