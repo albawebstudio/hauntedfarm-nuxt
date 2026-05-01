@@ -45,6 +45,8 @@ export default defineNuxtConfig({
 
   runtimeConfig: {
     recaptchaSecretKey: process.env.RECAPTCHA_SECRET_KEY,
+    contactFormToEmail: process.env.CONTACT_FORM_TO_EMAIL,
+    contactFormFromEmail: process.env.CONTACT_FORM_FROM_EMAIL,
     public: {
       startDate: process.env.START_DATE,
       endDate: process.env.END_DATE,
