@@ -5,6 +5,19 @@ pages_build_output_dir = "dist"
 
 compatibility_flags = ["nodejs_compat","no_nodejs_compat_v2"]
 
+# Environment-specific variables
+[env.production]
+START_DATE = "2025-09-26 19:00:00"
+END_DATE = "2025-10-31 23:59:59"
+RECAPTCHA_SITE_KEY = "6Lcmc5UqAAAAAOhzfp803AnmX3lTLs5kdTfCyLb_"
+GTAG_ID = "G-61QKTVDLHP"
+
+[env.development]
+START_DATE = "2025-09-26 19:00:00"
+END_DATE = "2025-10-31 23:59:59"
+RECAPTCHA_SITE_KEY = "6Lcmc5UqAAAAAOhzfp803AnmX3lTLs5kdTfCyLb_"
+GTAG_ID = "G-61QKTVDLHP"
+
 # Nuxt Content database
 [[d1_databases]]
 binding = "DB"

@@ -55,7 +55,7 @@ export default defineNuxtConfig({
   },
 
   gtag: {
-    id: 'G-61QKTVDLHP'
+    id: process.env.GTAG_ID
   },
 
   svgo: {
