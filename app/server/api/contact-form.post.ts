@@ -1,5 +1,4 @@
 import type { H3Event } from 'h3'
-import { env as cloudflareWorkerEnv } from 'cloudflare:workers'
 
 interface ContactPayload {
   name: string
@@ -23,88 +22,35 @@ type CloudflareEnv = {
   CONTACT_FORM_EMAIL?: CloudflareSendEmail
   CONTACT_FORM_TO_EMAIL?: string
   CONTACT_FORM_FROM_EMAIL?: string
-  NUXT_CONTACT_FORM_TO_EMAIL?: string
-  NUXT_CONTACT_FORM_FROM_EMAIL?: string
-  NITRO_CONTACT_FORM_TO_EMAIL?: string
-  NITRO_CONTACT_FORM_FROM_EMAIL?: string
 }
 
-function envFromNodeUnenv(event: H3Event): CloudflareEnv | undefined {
-  const req = event.node?.req as
-    | { __unenv__?: { _platform?: { cloudflare?: { env?: CloudflareEnv } } } }
-    | undefined
-  return req?.__unenv__?._platform?.cloudflare?.env
-}
-
-function workerEnvLayers(event: H3Event): CloudflareEnv[] {
-  const layers: (CloudflareEnv | undefined)[] = [
-    event.context.cloudflare?.env as CloudflareEnv | undefined,
-    envFromNodeUnenv(event),
-    (globalThis as typeof globalThis & { __env__?: CloudflareEnv }).__env__,
-    cloudflareWorkerEnv as unknown as CloudflareEnv,
-  ]
-  return layers.filter((x): x is CloudflareEnv => x != null && typeof x === 'object')
-}
-
-function readEnvString(event: H3Event, ...keys: (keyof CloudflareEnv)[]): string {
-  for (const key of keys) {
-    for (const layer of workerEnvLayers(event)) {
-      const v = layer[key]
-      if (typeof v === 'string' && v.trim()) {
-        return v.trim()
-      }
-    }
-  }
-  return ''
+function getCfEnv(event: H3Event): CloudflareEnv {
+  return (event.context.cloudflare?.env ?? {}) as CloudflareEnv
 }
 
 function resolveSendEmailBinding(event: H3Event): CloudflareSendEmail | undefined {
-  for (const layer of workerEnvLayers(event)) {
-    const b = layer.CONTACT_FORM_EMAIL
-    if (b && typeof b.send === 'function') {
-      return b
-    }
-  }
-  return undefined
-}
-
-function firstNonEmptyString(...candidates: unknown[]): string {
-  for (const c of candidates) {
-    if (typeof c === 'string' && c.trim()) {
-      return c.trim()
-    }
-  }
-  return ''
+  const b = getCfEnv(event).CONTACT_FORM_EMAIL
+  return b && typeof b.send === 'function' ? b : undefined
 }
 
 function resolveContactAddresses(
   event: H3Event,
   runtimeConfig: ReturnType<typeof useRuntimeConfig>,
 ): { to: string; from: string } {
-  const to = firstNonEmptyString(
-    runtimeConfig.contactFormToEmail,
-    readEnvString(
-      event,
-      'CONTACT_FORM_TO_EMAIL',
-      'NUXT_CONTACT_FORM_TO_EMAIL',
-      'NITRO_CONTACT_FORM_TO_EMAIL',
-    ),
-    typeof process !== 'undefined' ? process.env.NITRO_CONTACT_FORM_TO_EMAIL : undefined,
-    typeof process !== 'undefined' ? process.env.CONTACT_FORM_TO_EMAIL : undefined,
-    typeof process !== 'undefined' ? process.env.NUXT_CONTACT_FORM_TO_EMAIL : undefined,
+  const cfEnv = getCfEnv(event)
+
+  const to = (
+    (runtimeConfig.contactFormToEmail as string | undefined)?.trim() ||
+    cfEnv.CONTACT_FORM_TO_EMAIL?.trim() ||
+    ''
   )
-  const from = firstNonEmptyString(
-    runtimeConfig.contactFormFromEmail,
-    readEnvString(
-      event,
-      'CONTACT_FORM_FROM_EMAIL',
-      'NUXT_CONTACT_FORM_FROM_EMAIL',
-      'NITRO_CONTACT_FORM_FROM_EMAIL',
-    ),
-    typeof process !== 'undefined' ? process.env.NITRO_CONTACT_FORM_FROM_EMAIL : undefined,
-    typeof process !== 'undefined' ? process.env.CONTACT_FORM_FROM_EMAIL : undefined,
-    typeof process !== 'undefined' ? process.env.NUXT_CONTACT_FORM_FROM_EMAIL : undefined,
+
+  const from = (
+    (runtimeConfig.contactFormFromEmail as string | undefined)?.trim() ||
+    cfEnv.CONTACT_FORM_FROM_EMAIL?.trim() ||
+    ''
   )
+
   return { to, from }
 }
 
@@ -197,8 +143,10 @@ export default defineEventHandler(async (event) => {
 
   if (!to || !from) {
     console.error(
-      '[contact-form] Missing to/from addresses. Pass the H3 event into useRuntimeConfig() so Nitro can read process.env (backed by globalThis.__env__ on Cloudflare). '
-        + 'Set CONTACT_FORM_TO_EMAIL and CONTACT_FORM_FROM_EMAIL for Preview and Production, or use Nitro names NITRO_CONTACT_FORM_TO_EMAIL / NITRO_CONTACT_FORM_FROM_EMAIL.',
+      '[contact-form] Missing to/from addresses. '
+        + `to=${JSON.stringify(to)} from=${JSON.stringify(from)}. `
+        + 'Ensure CONTACT_FORM_TO_EMAIL and CONTACT_FORM_FROM_EMAIL secrets are set for both '
+        + 'Production and Preview environments in the Cloudflare Pages dashboard.',
     )
     throw createError({
       statusCode: 503,
