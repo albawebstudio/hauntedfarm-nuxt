@@ -9,18 +9,18 @@ compatibility_flags = ["nodejs_compat","no_nodejs_compat_v2"]
 [env.production]
 START_DATE = "2025-09-26 19:00:00"
 END_DATE = "2025-10-31 23:59:59"
-RECAPTCHA_SITE_KEY = "6Lcmc5UqAAAAAOhzfp803AnmX3lTLs5kdTfCyLb_"
+RESEND_TEMPLATE_ID = "0f15bc59-2511-41a0-a9d6-c93fb3fb192e"
 GTAG_ID = "G-61QKTVDLHP"
 
 [env.preview]
 START_DATE = "2025-09-26 19:00:00"
 END_DATE = "2025-10-31 23:59:59"
-RECAPTCHA_SITE_KEY = "6Lcmc5UqAAAAAOhzfp803AnmX3lTLs5kdTfCyLb_"
+RESEND_TEMPLATE_ID = "0f15bc59-2511-41a0-a9d6-c93fb3fb192e"
 GTAG_ID = "G-61QKTVDLHP"
 
 # Outbound mail via Cloudflare Email Service / Email Routing (Workers send_email binding)
 [[send_email]]
-name = "CONTACT_FORM_EMAIL"
+name = "HF_CONTACT_FORM_EMAIL"
 
 # Nuxt Content database
 [[d1_databases]]

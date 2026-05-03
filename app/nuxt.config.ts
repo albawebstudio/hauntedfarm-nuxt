@@ -11,14 +11,7 @@ export default defineNuxtConfig({
 
   css: [
     '@/assets/css/main.css',
-    /*'@fortawesome/fontawesome-svg-core/styles.css'*/
   ],
-
-  ui: {
-    theme: {
-      colors: ['thunderbird', 'timberwolf', 'cod-gray', 'japonica', 'jape','merlin','tiktok'],
-    }
-  },
 
   modules: [
     "@nuxt/content",
@@ -31,7 +24,6 @@ export default defineNuxtConfig({
 
   plugins: [
     '~/plugins/vue3-google-map',
-    '~/plugins/recaptcha',
     '~/plugins/fontawesome',
   ],
 
@@ -44,17 +36,12 @@ export default defineNuxtConfig({
   },
 
   runtimeConfig: {
-    recaptchaSecretKey: process.env.RECAPTCHA_SECRET_KEY,
-    contactFormToEmail:
-      process.env.NUXT_CONTACT_FORM_TO_EMAIL || process.env.CONTACT_FORM_TO_EMAIL,
-    contactFormFromEmail:
-      process.env.NUXT_CONTACT_FORM_FROM_EMAIL || process.env.CONTACT_FORM_FROM_EMAIL,
+    resendApiKey: process.env.RESEND_API_KEY ?? "",
+    googleMapsApiKey: process.env.GOOGLE_MAPS_API_KEY ?? "",
     public: {
-      startDate: process.env.START_DATE,
-      endDate: process.env.END_DATE,
-      apiUrl: process.env.API_URL,
-      googleMapsApiKey: process.env.GOOGLE_MAPS_API_KEY,
-      recaptchaSiteKey: process.env.RECAPTCHA_SITE_KEY,
+      startDate: process.env.START_DATE ?? "",
+      endDate: process.env.END_DATE ?? "",
+      resendTemplateId: process.env.RESEND_TEMPLATE_ID ?? "",
     }
   },
 

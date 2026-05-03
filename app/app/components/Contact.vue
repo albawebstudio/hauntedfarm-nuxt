@@ -9,15 +9,10 @@ import Spinner from "~/components/common/Spinner.vue";
 import Success from "~/components/common/Success.vue";
 import ContactForm from "~/components/common/ContactForm.vue";
 import LogoSvg from "~/assets/images/logo.svg";
-import useGoogleRecaptcha, {
-  RecaptchaAction,
-} from "~/composables/useGoogleRecaptcha"
-import type { GoogleRecaptchaResponse } from "~/models/types/google-recaptcha-response"
 import type { ContactFormResponse } from "~/models/types/contact-form-response"
 
-const { executeRecaptcha } = useGoogleRecaptcha();
 const config = useRuntimeConfig()
-const apiKey = config.public.googleMapsApiKey
+const apiKey = config.googleMapsApiKey
 
 const {
   mapOptions,
@@ -76,7 +71,7 @@ const submitForm = async () => {
 
     if (formData.phone === '' && isOutsideThreshold) {
       const { phone, form_time, ...contactForm } = formData
-      const response = await useApi<ContactFormResponse>('/api/contact-form', {
+      const response = await useApi<ContactFormResponse>('/api/send', {
         method: "POST",
         body: contactForm,
       })
@@ -139,6 +134,7 @@ const clearSuccess = () => {
               v-if="showForm"
               v-model:name.trim="form.name"
               v-model:email.trim="form.email"
+              v-model:phone.trim="form.phone"
               v-model:subject.trim="form.subject"
               v-model:message.trim="form.message"
               @submit="submitForm"
