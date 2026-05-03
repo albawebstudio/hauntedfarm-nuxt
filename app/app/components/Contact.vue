@@ -12,7 +12,7 @@ import LogoSvg from "~/assets/images/logo.svg";
 import type { ContactFormResponse } from "~/models/types/contact-form-response"
 
 const config = useRuntimeConfig()
-const apiKey = config.googleMapsApiKey
+const apiKey = config.public.googleMapsApiKey
 
 const {
   mapOptions,

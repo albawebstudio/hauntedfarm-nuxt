@@ -37,10 +37,10 @@ export default defineNuxtConfig({
 
   runtimeConfig: {
     resendApiKey: process.env.RESEND_API_KEY ?? "",
-    googleMapsApiKey: process.env.GOOGLE_MAPS_API_KEY ?? "",
     public: {
       startDate: process.env.START_DATE ?? "",
       endDate: process.env.END_DATE ?? "",
+      googleMapsApiKey: process.env.GOOGLE_MAPS_API_KEY ?? "",
       resendTemplateId: process.env.RESEND_TEMPLATE_ID ?? "",
     }
   },
