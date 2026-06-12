@@ -24,10 +24,6 @@ GTAG_ID = "G-61QKTVDLHP"
 #RESEND_TEMPLATE_ID = "0f15bc59-2511-41a0-a9d6-c93fb3fb192e"
 #GTAG_ID = "G-61QKTVDLHP"
 
-# Outbound mail via Cloudflare Email Service / Email Routing (Workers send_email binding)
-[[send_email]]
-name = "HF_CONTACT_FORM_EMAIL"
-
 # Nuxt Content database
 [[d1_databases]]
 binding = "DB"
