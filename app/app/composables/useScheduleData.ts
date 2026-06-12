@@ -17,6 +17,15 @@ export function useScheduleData() {
     const startDate = new Date(runtimeConfig.public.startDate);
     const endDate = new Date(runtimeConfig.public.endDate);
 
+    const now = new Date();
+    const displayStartDate = now < endDate
+        ? startDate.toLocaleDateString('en-US', { month: 'long', day: 'numeric' }).replace(/(\d+)$/, (_, d) => {
+            const n = parseInt(d);
+            const suffix = ['th','st','nd','rd'][((n % 100 - 20) % 10) < 4 && (n % 100 - 20) % 10 >= 0 ? (n % 100 - 20) % 10 : n % 100 < 4 ? n % 100 : 0] ?? 'th';
+            return `${n}${suffix}`;
+          })
+        : 'September';
+
     const tagLines: string[] = [
         "Enter the realm of terror.",
         "Dare to be scared.",
@@ -126,7 +135,7 @@ export function useScheduleData() {
     const events = buildEvents();
     const schedule = ref<Schedule> ({
         title: 'dates and hours',
-        content: 'The Haunted Farm runs Friday & Saturday starting September 27th through Halloween October 31st from 7-11 pm',
+        content: `The Haunted Farm runs Friday & Saturday starting ${displayStartDate} through Halloween October 31st from 7-11 pm`,
         // events:  events.value,
         events: events,
         tagLines: tagLines,
@@ -136,5 +145,6 @@ export function useScheduleData() {
         schedule,
         events,
         tagLines,
+        displayStartDate,
     }
 }
