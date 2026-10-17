@@ -1,35 +1,21 @@
-import { Resend } from 'resend';
+import { sendContactEmail, type ContactEmailPayload } from '../../shared/send-contact-email'
 
 export default defineEventHandler(async (event) => {
-    const config = useRuntimeConfig(event);
-    const resend = new Resend(config.resendApiKey);
-    const templateId = config.public.resendTemplateId;
+  const config = useRuntimeConfig(event)
+  const body = await readBody<ContactEmailPayload>(event)
 
-    const body = await readBody(event);
+  const result = await sendContactEmail(
+    config.resendApiKey,
+    config.public.resendTemplateId,
+    body,
+  )
 
-    const response = await resend.emails.send({
-        from: 'HauntedFarm <andrew@omens.hauntedfarm.com>',
-        to: ['support@hauntedfarm.com'],
-        subject: body.subject ?? 'New Contact Form Submission',
-        template: {
-            id: templateId,
-            variables: {
-                name: body.name,
-                email: body.email,
-                phone: body.phone,
-                messageBody: body.messageBody,
-                subject: body.subject,
-                formType: body.formType,
-            },
-        },
-    });
+  if (!result.success) {
+    throw createError({
+      statusCode: 500,
+      message: result.message,
+    })
+  }
 
-    if (response.error) {
-        throw createError({
-            statusCode: 500,
-            message: response.error.message ?? 'Error sending email',
-        });
-    }
-
-    return { success: true, data: response.data };
-});
+  return { success: true, data: result.data }
+})
