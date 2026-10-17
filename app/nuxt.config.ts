@@ -27,14 +27,6 @@ export default defineNuxtConfig({
     '~/plugins/fontawesome',
   ],
 
-  content: {
-    database: {
-      type: 'd1',
-      binding: 'DB',
-      bindingName: 'DB'
-    },
-  },
-
   runtimeConfig: {
     resendApiKey: process.env.RESEND_API_KEY ?? "",
     public: {
@@ -75,7 +67,11 @@ export default defineNuxtConfig({
   },
 
   nitro: {
-    preset: 'cloudflare_pages',
+    preset: 'cloudflare_pages_static',
+    prerender: {
+      crawlLinks: true,
+      routes: ['/', '/legal/terms', '/legal/privacy'],
+    },
   },
 
   vite: {

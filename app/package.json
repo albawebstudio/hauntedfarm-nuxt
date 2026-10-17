@@ -6,12 +6,13 @@
     "node": ">=22.0.0"
   },
   "scripts": {
-    "build": "nuxt build",
+    "build": "nuxi generate",
     "dev": "nuxt dev --dotenv .env.local",
-    "wrangler:dev": "nuxt build --dotenv .env.local && wrangler pages dev dist",
-    "generate": "nuxt generate",
-    "preview": "nuxi build && nuxt preview",
-    "postinstall": "nuxt prepare"
+    "wrangler:dev": "nuxi generate --dotenv .env.local && wrangler pages dev",
+    "pages:deploy": "wrangler pages deploy",
+    "preview": "nuxi generate && nuxt preview",
+    "postinstall": "nuxt prepare",
+    "test": "node --experimental-strip-types --test shared/*.test.ts"
   },
   "dependencies": {
     "@bitjson/qr-code": "^1.0.2",
@@ -42,6 +43,5 @@
     "@types/google.maps": "^3.58.1",
     "@types/node": "^25.6.0",
     "wrangler": "^4.86.0"
-  },
-  "pnpm": {}
+  }
 }
