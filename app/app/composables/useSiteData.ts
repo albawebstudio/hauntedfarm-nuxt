@@ -62,6 +62,13 @@ export function useSiteData() {
             displayText: "Media",
         },
         {
+            title: "faq",
+            to: "/#faq",
+            external: true,
+            icon: null,
+            displayText: "FAQ",
+        },
+        {
             title: "Contact",
             to: "/#contact",
             external: true,
