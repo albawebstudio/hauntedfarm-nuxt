@@ -86,6 +86,35 @@ bun run dev
 
 Check out the [deployment documentation](https://nuxt.com/docs/getting-started/deployment) for more information.
 
+## Cloudflare Pages (production)
+
+The site uses **full static generation** (`nuxi generate`) on Cloudflare Pages—the lowest runtime CPU model for this app.
+
+- **Build command:** `pnpm run build` (runs `nuxi generate` from `/app`)
+- **Build output directory:** `dist`
+- **Node.js:** 22.x (see `engines` in `package.json`)
+
+All pages (home and `/legal/*`) are prerendered to static HTML. Nuxt Content uses local SQLite at build time only; in the browser, content queries run via WASM SQLite against static dumps—**no D1 and no Nitro Worker for page routes**.
+
+The contact form is the only server-side code in production: a **Pages Function** at `functions/api/send.ts` (not a full-site `_worker.js`). Set secrets in the Cloudflare Pages dashboard:
+
+- `RESEND_API_KEY`
+- `RESEND_TEMPLATE_ID`
+
+Public vars (`START_DATE`, `END_DATE`, `GTAG_ID`, `GOOGLE_MAPS_API_KEY`) are defined in `wrangler.toml` `[vars]` or overridden per environment in the dashboard.
+
+Local development uses `server/api/send.ts` (same Resend logic in `shared/send-contact-email.ts`). Preview the static build with Pages Functions:
+
+```bash
+pnpm run wrangler:dev
+```
+
+Deploy from `/app` (uploads `dist` from `wrangler.toml` plus `functions/`):
+
+```bash
+pnpm run pages:deploy
+```
+
 ## Staging
 
 A staging environment has been created via AWS Amplify. Let's assume you have created a new branch `feature/add-blog-post`.
@@ -111,6 +140,18 @@ The application is using AWS Amplify which has a hook to capture changes to the 
 ---
 
 ## Haunted Farm Assets
+
+### Colors
+
+| Color Name  | Hex Code                                                                                                 |
+|-------------|----------------------------------------------------------------------------------------------------------|
+| Thunderbird | <div style="display: inline-block; width: 16px; height: 16px; background-color: #d71818;"></div> #d71818 |
+| Timberwolf  | <div style="display: inline-block; width: 16px; height: 16px; background-color: #d2cfc9;"></div> #d2cfc9 |
+| Cod Gray    | <div style="display: inline-block; width: 16px; height: 16px; background-color: #060606;"></div> #060606 |
+| Japonica    | <div style="display: inline-block; width: 16px; height: 16px; background-color: #d27b58;"></div> #d27b58 |
+| Jape        | <div style="display: inline-block; width: 16px; height: 16px; background-color: #090909;"></div> #090909 |
+| Merlin      | <div style="display: inline-block; width: 16px; height: 16px; background-color: #434240;"></div> #434240 |
+| Tiktok      | <div style="display: inline-block; width: 16px; height: 16px; background-color: #00f2ea;"></div> #00f2ea |
 
 ### Fonts
 

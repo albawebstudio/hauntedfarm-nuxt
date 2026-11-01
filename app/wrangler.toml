@@ -1,0 +1,13 @@
+name = "hauntedfarm"
+compatibility_date = "2026-02-21"
+
+pages_build_output_dir = "dist"
+
+compatibility_flags = ["nodejs_compat","no_nodejs_compat_v2"]
+
+# Environment-specific variables
+[vars]
+START_DATE = "2026-09-25 19:00:00"
+END_DATE = "2026-10-31 23:59:59"
+GTAG_ID = "G-61QKTVDLHP"
+RESEND_TEMPLATE_ID = "0f15bc59-2511-41a0-a9d6-c93fb3fb192e"

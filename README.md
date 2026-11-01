@@ -2,8 +2,8 @@
 
 This is the base repository for the Haunted Farm website. The site leverages several frameworks.
 
-- [Tailwindcss v3](https://tailwindcss.com/)
-- [Nuxt v3](https://nuxt.com/)
+- [Tailwindcss v4](https://tailwindcss.com/)
+- [Nuxt v4](https://nuxt.com/)
 
 ## Requirements
 
