@@ -16,6 +16,8 @@ definePageMeta({
 
     <Media/>
 
+    <Faq/>
+
     <Contact/>
 
   </div>
